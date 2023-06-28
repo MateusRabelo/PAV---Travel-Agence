@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="672.0" prefWidth="1238.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gui4.Home">
+<AnchorPane prefHeight="672.0" prefWidth="1238.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.controllers.Home">
    <children>
       <BorderPane prefHeight="618.0" prefWidth="908.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <left>
@@ -23,50 +23,50 @@
                <children>
                   <ImageView fitHeight="66.0" fitWidth="184.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@imgs/logo2.png" />
+                        <Image url="@../imgs/logo2.png" />
                      </image>
                   </ImageView>
-                  <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="76.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="216.0" stylesheets="@utils/fullpackstyling.css" text="Usuario" textFill="WHITE">
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="76.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="216.0" stylesheets="@../css/fullpackstyling.css" text="Usuario" textFill="WHITE">
                      <graphic>
                         <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@imgs/user.png" />
+                              <Image url="@../imgs/user.png" />
                            </image>
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="216.0" stylesheets="@utils/fullpackstyling.css" text="Inicio" textFill="WHITE">
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="216.0" stylesheets="@../css/fullpackstyling.css" text="Inicio" textFill="WHITE">
                      <graphic>
                         <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@imgs/home.png" />
+                              <Image url="@../imgs/home.png" />
                            </image>
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="240.0" stylesheets="@utils/fullpackstyling.css" text="Promocionais" textFill="WHITE">
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="240.0" stylesheets="@../css/fullpackstyling.css" text="Promocionais" textFill="WHITE">
                      <graphic>
                         <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@imgs/promo.png" />
+                              <Image url="@../imgs/promo.png" />
                            </image>
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="65.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="230.0" stylesheets="@utils/fullpackstyling.css" text="Minhas Passagens" textFill="WHITE">
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="65.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="230.0" stylesheets="@../css/fullpackstyling.css" text="Minhas Passagens" textFill="WHITE">
                      <graphic>
                         <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@imgs/ticket.png" />
+                              <Image url="@../imgs/ticket.png" />
                            </image>
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="269.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="240.0" stylesheets="@utils/fullpackstyling.css" text="Ajuda" textFill="WHITE">
+                  <Button alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="269.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="240.0" stylesheets="@../css/fullpackstyling.css" text="Ajuda" textFill="WHITE">
                      <graphic>
                         <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@imgs/ajuda.png" />
+                              <Image url="@../imgs/ajuda.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -100,9 +100,9 @@
                   </Label>
                   <Separator layoutX="553.0" layoutY="8.0" orientation="VERTICAL" prefHeight="409.0" prefWidth="6.0" />
                   <Label layoutX="70.0" layoutY="105.0" text="Nome" />
-                  <TextField layoutX="70.0" layoutY="128.0" promptText="Primeiro Nome" stylesheets="@utils/fullpackstyling.css" />
+                  <TextField layoutX="70.0" layoutY="128.0" promptText="Primeiro Nome" stylesheets="@../css/fullpackstyling.css" />
                   <Label layoutX="264.0" layoutY="105.0" text="Sobrenome" />
-                  <TextField layoutX="264.0" layoutY="128.0" prefHeight="26.0" prefWidth="176.0" promptText="Ultimo Sobrenome" stylesheets="@utils/fullpackstyling.css" />
+                  <TextField layoutX="264.0" layoutY="128.0" prefHeight="26.0" prefWidth="176.0" promptText="Ultimo Sobrenome" stylesheets="@../css/fullpackstyling.css" />
                   <Label layoutX="70.0" layoutY="72.0" text="Dados do Passageiro">
                      <font>
                         <Font name="System Bold" size="16.0" />
@@ -113,20 +113,20 @@
                   <Label layoutX="264.0" layoutY="166.0" text="Sexo" />
                   <ChoiceBox layoutX="264.0" layoutY="186.0" prefHeight="26.0" prefWidth="105.0" />
                   <Label layoutX="70.0" layoutY="221.0" text="CPF" />
-                  <TextField layoutX="70.0" layoutY="244.0" prefHeight="26.0" prefWidth="148.0" promptText="000.000.000-00" stylesheets="@utils/fullpackstyling.css" />
+                  <TextField layoutX="70.0" layoutY="244.0" prefHeight="26.0" prefWidth="148.0" promptText="000.000.000-00" stylesheets="@../css/fullpackstyling.css" />
                   <Label layoutX="70.0" layoutY="283.0" text="Numero" />
-                  <TextField layoutX="70.0" layoutY="305.0" prefHeight="26.0" prefWidth="148.0" promptText="(00)00000-0000" stylesheets="@utils/fullpackstyling.css" />
+                  <TextField layoutX="70.0" layoutY="305.0" prefHeight="26.0" prefWidth="148.0" promptText="(00)00000-0000" stylesheets="@../css/fullpackstyling.css" />
                   <Label layoutX="70.0" layoutY="352.0" text="E-mail" />
-                  <TextField layoutX="68.0" layoutY="377.0" prefHeight="26.0" prefWidth="235.0" promptText="Ex: juaum@hotmail.com" stylesheets="@utils/fullpackstyling.css" />
+                  <TextField layoutX="68.0" layoutY="377.0" prefHeight="26.0" prefWidth="235.0" promptText="Ex: juaum@hotmail.com" stylesheets="@../css/fullpackstyling.css" />
                   <Label layoutX="615.0" layoutY="72.0" text="Dados do Pagador">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
                   </Label>
                   <Label layoutX="615.0" layoutY="179.0" text="Nome" />
-                  <TextField layoutX="615.0" layoutY="202.0" promptText="Primeiro Nome" stylesheets="@utils/fullpackstyling.css" />
+                  <TextField layoutX="615.0" layoutY="202.0" promptText="Primeiro Nome" stylesheets="@../css/fullpackstyling.css" />
                   <Label layoutX="803.0" layoutY="179.0" text="Sobrenome" />
-                  <TextField layoutX="803.0" layoutY="201.0" prefHeight="26.0" prefWidth="176.0" promptText="Ultimo Sobrenome" stylesheets="@utils/fullpackstyling.css" />
+                  <TextField layoutX="803.0" layoutY="201.0" prefHeight="26.0" prefWidth="176.0" promptText="Ultimo Sobrenome" stylesheets="@../css/fullpackstyling.css" />
                   <ToggleButtonGroup layoutX="616.0" layoutY="270.0" selectionType="SINGLE" />
                </children>
             </Pane>

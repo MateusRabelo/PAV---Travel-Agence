@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.controllers.Controller">
+   <children>
+      <BorderPane prefHeight="618.0" prefWidth="908.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <left>
+            <VBox prefHeight="618.0" prefWidth="202.0" style="-fx-background-color: #252525;">
+               <children>
+                  <ImageView fitHeight="66.0" fitWidth="184.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imgs/logo2.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="btnUsuario" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="76.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="216.0" stylesheets="@../css/fullpackstyling.css" text="Usuario" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../imgs/user.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnInicio" alignment="BASELINE_LEFT" graphicTextGap="10.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="55.0" prefWidth="216.0" stylesheets="@../css/fullpackstyling.css" text="Inicio" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../imgs/home.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnPromocoes" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="55.0" prefWidth="240.0" stylesheets="@../css/fullpackstyling.css" text="Promocionais" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../imgs/promo.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnMinhasPassagens" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="65.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="55.0" prefWidth="230.0" stylesheets="@../css/fullpackstyling.css" text="Minhas Passagens" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../imgs/ticket.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="btnSobre" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="269.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="55.0" prefWidth="240.0" stylesheets="@../css/fullpackstyling.css" text="Sobre" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../imgs/ajuda.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <ImageView fitHeight="183.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                  <Label alignment="BASELINE_CENTER" prefHeight="16.0" prefWidth="207.0" text="© 2023 - PAV" textFill="WHITE" />
+                  <Label alignment="BASELINE_CENTER" layoutX="10.0" layoutY="534.0" prefHeight="16.0" prefWidth="207.0" text="Todos direitos Reservados" textFill="WHITE" />
+                  <Label alignment="BASELINE_CENTER" layoutX="10.0" layoutY="550.0" prefHeight="16.0" prefWidth="207.0" text="V 12.039" textFill="WHITE" />
+               </children>
+            </VBox>
+         </left>
+         <center>
+            <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane fx:id="pnPromocoes" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Button layoutX="204.0" layoutY="248.0" mnemonicParsing="false" prefHeight="123.0" prefWidth="297.0" text="Button" />
+                     </children>
+                  </Pane>
+                  <Pane fx:id="pnHome" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="txtCidadeOrigem" layoutX="42.0" layoutY="71.0" prefHeight="29.0" prefWidth="139.0" promptText="Origem" />
+                        <TextField fx:id="txtCidadeDestino" layoutX="189.0" layoutY="70.0" prefHeight="29.0" prefWidth="139.0" promptText="Destino" />
+                        <DatePicker fx:id="txtDiaIda" layoutX="335.0" layoutY="70.0" prefHeight="29.0" prefWidth="139.0" promptText="Ida" />
+                        <DatePicker fx:id="txtDiaRetorno" layoutX="480.0" layoutY="70.0" prefHeight="29.0" prefWidth="139.0" promptText="Retorno" />
+                        <Button fx:id="btnBuscar" layoutX="633.0" layoutY="70.0" mnemonicParsing="false" prefHeight="29.0" stylesheets="@../css/fullpackstyling.css" text="Buscar" />
+                        <TableView layoutX="43.0" layoutY="125.0" prefHeight="459.0" prefWidth="653.0" stylesheets="@../css/fullpackstyling.css">
+                          <columns>
+                            <TableColumn prefWidth="81.0" text="ID" />
+                              <TableColumn prefWidth="123.0" text="HORARIO" />
+                              <TableColumn prefWidth="124.0" text="VAGAS" />
+                              <TableColumn prefWidth="182.0" text="PREÇO" />
+                          </columns>
+                        </TableView>
+                        <Label layoutX="167.0" layoutY="21.0" text="Bem vindo a Agencia PAV">
+                           <font>
+                              <Font name="DejaVu Sans Bold" size="28.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="pnSobre" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="210.0" fitWidth="319.0" layoutX="98.0" layoutY="413.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../imgs/icoAirplane.png" />
+                           </image>
+                        </ImageView>
+                        <Label accessibleText="Na PAV, estamos comprometidos em proporcionar a você uma experiência única e inesquecível ao explorar o mundo. Nosso nome, PAV, é uma abreviação de &quot;Passaporte Além das Vistas&quot;, refletindo nossa paixão por oferecer muito mais do que simplesmente destinos turísticos. Acreditamos que cada viagem é uma oportunidade para descobrir culturas fascinantes, conectar-se com pessoas incríveis e criar memórias duradouras." alignment="CENTER" layoutX="14.0" layoutY="64.0" lineSpacing="5.0" prefHeight="355.0" prefWidth="305.0" text="Na PAV, garantimos à você experiências únicas e inesquecíveis ao explorar o mundo. Nosso objetivo ao desenvolver a PAV  é refletir nossa paixão por oferer muito mais do que simplesmente destinos turísticos. Aqui, acreditamos que cada viagem é uma oportunidade de conectar-se com pessoas incríveis e criar memórias duradouras" textAlignment="JUSTIFY" textOverrun="CLIP" wrapText="true">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </Label>
+                        <Label accessibleText="Na PAV, estamos comprometidos em proporcionar a você uma experiência única e inesquecível ao explorar o mundo. Nosso nome, PAV, é uma abreviação de &quot;Passaporte Além das Vistas&quot;, refletindo nossa paixão por oferecer muito mais do que simplesmente destinos turísticos. Acreditamos que cada viagem é uma oportunidade para descobrir culturas fascinantes, conectar-se com pessoas incríveis e criar memórias duradouras." alignment="CENTER" layoutX="376.0" layoutY="34.0" lineSpacing="5.0" prefHeight="319.0" prefWidth="296.0" text="Como um projeto de POO em Java, desenvlvemos a PAV com foco na eficiência, facilidade de uso e flexibilidade.como um projeto de POO em Java, desenvlvemos a PAV com foco na eficiência, facilidade de uso e flexibilidade." textAlignment="JUSTIFY" textOverrun="CLIP" wrapText="true">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </Label>
+                        <Line endX="2.200042724609375" endY="365.0" layoutX="345.0" layoutY="47.0" startX="2.200103759765625" startY="-15.800006866455078" />
+                        <ImageView fitHeight="289.0" fitWidth="290.0" layoutX="380.0" layoutY="315.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../imgs/icoSmiley.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </children>
+            </StackPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

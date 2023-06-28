@@ -5,11 +5,12 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Pane;
 
 public class Controller {
 
     @FXML
-    private Button btnAjuda;
+    private Button btnSobre;
 
     @FXML
     private Button btnBuscar;
@@ -27,6 +28,15 @@ public class Controller {
     private Button btnUsuario;
 
     @FXML
+    private Pane pnHome;
+
+    @FXML
+    private Pane pnPromocoes;
+
+    @FXML
+    private Pane pnSobre;
+
+    @FXML
     private TextField txtCidadeDestino;
 
     @FXML
@@ -39,8 +49,43 @@ public class Controller {
     private DatePicker txtDiaRetorno;
 
     @FXML
-    void fazerBusca(ActionEvent event) {
+    private void handleClicks(ActionEvent event)
+    {
+        if (event.getSource() == btnSobre)
+        {
+            pnSobre.toFront();
 
+            pnSobre.setOpacity(1);
+            pnHome.setOpacity(0);
+            pnPromocoes.setOpacity(0);
+        }
+        else if (event.getSource() == btnBuscar)
+        {
+
+        }
+        else if (event.getSource() == btnInicio)
+        {
+            pnHome.toFront();
+
+            pnHome.setOpacity(1);
+            pnSobre.setOpacity(0);
+            pnPromocoes.setOpacity(0);
+        }
+        else if (event.getSource() == btnUsuario)
+        {
+
+        }
+        else if (event.getSource() == btnPromocoes)
+        {
+            pnPromocoes.toFront();
+
+            pnPromocoes.setOpacity(1);
+            pnSobre.setOpacity(0);
+            pnHome.setOpacity(0);
+        }
+        else if (event.getSource() == btnMinhasPassagens)
+        {
+
+        }
     }
-
 }
