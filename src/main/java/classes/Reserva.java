@@ -65,9 +65,9 @@ public class Reserva {
                 this.dataDaReserva = dataDaReserva;
         }
 
-        public void calcularPreco()
+        public double calcularPreco()
         {
-
+                return 0;
         }
 
         public void reservar()
