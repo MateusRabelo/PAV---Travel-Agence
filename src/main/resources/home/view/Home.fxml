@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
@@ -17,7 +18,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane cacheShape="false" centerShape="false" scaleShape="false" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.controllers.Controller">
+<AnchorPane cacheShape="false" centerShape="false" scaleShape="false" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.controllers.Controller">
    <children>
       <BorderPane prefHeight="618.0" prefWidth="908.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <left>
@@ -141,28 +142,55 @@
                         </ImageView>
                      </children>
                   </Pane>
-                  <Pane fx:id="pnMain" prefHeight="200.0" prefWidth="200.0">
+                  <Pane fx:id="pnMain" opacity="0.0" prefHeight="200.0" prefWidth="200.0">
                      <children>
                         <Label layoutX="195.0" layoutY="199.0" text="Agência PAV">
                            <font>
                               <Font name="Arial Bold" size="48.0" />
                            </font>
                         </Label>
-                        <Label layoutX="51.0" layoutY="282.0" text="&quot;Passagens alé da vista&quot;">
+                        <Label layoutX="34.0" layoutY="280.0" text="&quot;Passagens além da vista&quot;">
                            <font>
                               <Font name="Arial Bold" size="48.0" />
                            </font>
                         </Label>
-                        <Label layoutX="103.0" layoutY="57.0" prefHeight="135.0" prefWidth="499.0" text="Seja bem-vindo!">
+                        <Label layoutX="103.0" layoutY="57.0" prefHeight="135.0" prefWidth="540.0" text="Seja bem-vindo!">
                            <font>
                               <Font name="Arial Bold" size="64.0" />
                            </font>
                         </Label>
-                        <Label layoutX="124.0" layoutY="397.0" text="Escolha uma opção para começar">
+                        <Label layoutX="90.0" layoutY="360.0" text="Escolha uma opção para começar">
                            <font>
                               <Font size="31.0" />
                            </font>
                         </Label>
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="285.0" layoutY="195.0" prefHeight="25.0" prefWidth="141.0" text="Entrar na PAV">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="268.0" layoutY="248.0" prefHeight="26.0" prefWidth="173.0" promptText="Username" stylesheets="@../css/fullpackstyling.css" />
+                        <PasswordField layoutX="268.0" layoutY="296.0" prefHeight="26.0" prefWidth="173.0" promptText="Senha" stylesheets="@../css/fullpackstyling.css" />
+                        <Button layoutX="296.0" layoutY="347.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="114.0" stylesheets="@../css/fullpackstyling.css" text="Login" />
+                        <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="328.0" layoutY="131.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../imgs/LoginIcon.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="235.0" layoutY="249.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../imgs/userLogin.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="235.0" layoutY="297.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../imgs/senhaLogin.png" />
+                           </image>
+                        </ImageView>
                      </children>
                   </Pane>
                </children>

@@ -121,3 +121,48 @@
     -fx-border-radius: 5px;
     -fx-background-radius: 5px;
 }
+
+.input {
+    -fx-padding: 5px 12px;
+    -fx-font-size: 14px;
+    -fx-line-height: 20px;
+    -fx-color: #24292e;
+    -fx-vertical-align: middle;
+    -fx-background-color: #ffffff;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: right 8px center;
+    -fx-border: 1px solid #e1e4e8;
+    -fx-border-radius: 6px;
+    -fx-outline: none;
+    -fx-box-shadow: rgba(225, 228, 232, 0.2) 0px 1px 0px 0px inset;
+}
+
+.input:focus {
+    -fx-border-color: #0366d6;
+    -fx-outline: none;
+    -fx-box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+}
+
+
+.text-field {
+    -fx-padding: 5px 12px;
+    -fx-font-size: 14px;
+    -fx-line-height: 20px;
+    -fx-color: #24292e;
+    -fx-vertical-align: middle;
+    -fx-background-color: #ffffff;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: right 8px center;
+    -fx-border: 1px solid #e1e4e8;
+    -fx-border-radius: 6px;
+    -fx-outline: none;
+    -fx-box-shadow: rgba(225, 228, 232, 0.2) 0px 1px 0px 0px inset;
+}
+
+.text-field:focus {
+    -fx-border-color: #0366d6;
+    -fx-outline: none;
+    -fx-box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+}
+
+
