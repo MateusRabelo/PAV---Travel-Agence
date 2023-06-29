@@ -14,4 +14,42 @@
 package classes;
 
 public class Pagamento {
+    private double valor;
+    private String metodoPagamento;
+    private Usuario pagador;
+
+    public boolean verificarPagamento()
+    {
+        return false;
+    }
+
+    public String getMetodoPagamento()
+    {
+        return metodoPagamento;
+    }
+
+    public void setMetodoPagamento(String metodoPagamento)
+    {
+        this.metodoPagamento = metodoPagamento;
+    }
+
+    public double getValor()
+    {
+        return valor;
+    }
+
+    public void setValor(double valor)
+    {
+        this.valor = valor;
+    }
+
+    public Usuario getPagador()
+    {
+        return pagador;
+    }
+
+    public void setPagador(Usuario pagador)
+    {
+        this.pagador = pagador;
+    }
 }
