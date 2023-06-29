@@ -32,7 +32,7 @@ public class Controller implements Initializable {
     private Button btnUsuario;
 
     @FXML
-    private Pane pnMain;
+    private Pane pnWelcome;
 
     @FXML
     private Pane pnHome;
@@ -45,6 +45,15 @@ public class Controller implements Initializable {
 
     @FXML
     private Pane pnUsuario;
+
+    @FXML
+    private Pane pnMinhasPassagens;
+
+    @FXML
+    private Pane pnLogado;
+
+    @FXML
+    private Pane pnPagamento;
 
     @FXML
     private TextField txtCidadeDestino;
@@ -63,7 +72,7 @@ public class Controller implements Initializable {
     @FXML
     private void handleClicks(ActionEvent event)
     {
-        pnMain.setOpacity(0);
+        pnWelcome.setOpacity(0);
 
         if (event.getSource() == btnUsuario)
         {
@@ -73,6 +82,7 @@ public class Controller implements Initializable {
             pnHome.setOpacity(0);
             pnSobre.setOpacity(0);
             pnPromocionais.setOpacity(0);
+            pnMinhasPassagens.setOpacity(0);
         }
         else if (event.getSource() == btnInicio)
         {
@@ -82,7 +92,7 @@ public class Controller implements Initializable {
             pnSobre.setOpacity(0);
             pnPromocionais.setOpacity(0);
             pnUsuario.setOpacity(0);
-
+            pnMinhasPassagens.setOpacity(0);
         }
         else if (event.getSource() == btnSobre)
         {
@@ -92,6 +102,7 @@ public class Controller implements Initializable {
             pnHome.setOpacity(0);
             pnPromocionais.setOpacity(0);
             pnUsuario.setOpacity(0);
+            pnMinhasPassagens.setOpacity(0);
         }
         else if (event.getSource() == btnPromocoes)
         {
@@ -101,16 +112,23 @@ public class Controller implements Initializable {
             pnSobre.setOpacity(0);
             pnHome.setOpacity(0);
             pnUsuario.setOpacity(0);
+            pnMinhasPassagens.setOpacity(0);
         }
         else if (event.getSource() == btnMinhasPassagens) {
+            pnMinhasPassagens.toFront();
 
+            pnMinhasPassagens.setOpacity(1);
+            pnSobre.setOpacity(0);
+            pnPromocionais.setOpacity(0);
+            pnHome.setOpacity(0);
+            pnUsuario.setOpacity(0);
         }
     }
 
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
-        pnMain.toFront();
+        pnWelcome.toFront();
 
         pnUsuario.setOpacity(0);
         pnPromocionais.setOpacity(0);
