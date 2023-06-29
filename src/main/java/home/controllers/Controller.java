@@ -44,6 +44,9 @@ public class Controller implements Initializable {
     private Pane pnSobre;
 
     @FXML
+    private Pane pnUsuario;
+
+    @FXML
     private TextField txtCidadeDestino;
 
     @FXML
@@ -55,21 +58,21 @@ public class Controller implements Initializable {
     @FXML
     private DatePicker txtDiaRetorno;
 
+
+
     @FXML
     private void handleClicks(ActionEvent event)
     {
         pnMain.setOpacity(0);
-        if (event.getSource() == btnSobre)
-        {
-            pnSobre.toFront();
 
-            pnSobre.setOpacity(1);
+        if (event.getSource() == btnUsuario)
+        {
+            pnUsuario.toFront();
+
+            pnUsuario.setOpacity(1);
             pnHome.setOpacity(0);
+            pnSobre.setOpacity(0);
             pnPromocoes.setOpacity(0);
-        }
-        else if (event.getSource() == btnBuscar)
-        {
-
         }
         else if (event.getSource() == btnInicio)
         {
@@ -78,10 +81,17 @@ public class Controller implements Initializable {
             pnHome.setOpacity(1);
             pnSobre.setOpacity(0);
             pnPromocoes.setOpacity(0);
-        }
-        else if (event.getSource() == btnUsuario)
-        {
+            pnUsuario.setOpacity(0);
 
+        }
+        else if (event.getSource() == btnSobre)
+        {
+            pnSobre.toFront();
+
+            pnSobre.setOpacity(1);
+            pnHome.setOpacity(0);
+            pnPromocoes.setOpacity(0);
+            pnUsuario.setOpacity(0);
         }
         else if (event.getSource() == btnPromocoes)
         {
@@ -90,32 +100,19 @@ public class Controller implements Initializable {
             pnPromocoes.setOpacity(1);
             pnSobre.setOpacity(0);
             pnHome.setOpacity(0);
+            pnUsuario.setOpacity(0);
         }
         else if (event.getSource() == btnMinhasPassagens) {
 
         }
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
         pnMain.toFront();
 
+        pnUsuario.setOpacity(0);
         pnPromocoes.setOpacity(0);
         pnSobre.setOpacity(0);
         pnHome.setOpacity(0);
