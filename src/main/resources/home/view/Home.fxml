@@ -173,9 +173,9 @@
                               <Font size="20.0" />
                            </font>
                         </Label>
-                        <TextField layoutX="268.0" layoutY="248.0" prefHeight="26.0" prefWidth="173.0" promptText="Username" stylesheets="@../css/fullpackstyling.css" />
-                        <PasswordField layoutX="268.0" layoutY="296.0" prefHeight="26.0" prefWidth="173.0" promptText="Senha" stylesheets="@../css/fullpackstyling.css" />
-                        <Button layoutX="296.0" layoutY="347.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="114.0" stylesheets="@../css/fullpackstyling.css" text="Login" />
+                        <TextField fx:id="txtUsuario" layoutX="268.0" layoutY="248.0" prefHeight="26.0" prefWidth="173.0" promptText="Username" stylesheets="@../css/fullpackstyling.css" />
+                        <PasswordField fx:id="txtSenha" layoutX="268.0" layoutY="296.0" prefHeight="26.0" prefWidth="173.0" promptText="Senha" stylesheets="@../css/fullpackstyling.css" />
+                        <Button fx:id="btnLogin" layoutX="296.0" layoutY="347.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="114.0" stylesheets="@../css/fullpackstyling.css" text="Login" />
                         <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="328.0" layoutY="131.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../imgs/LoginIcon.png" />
