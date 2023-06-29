@@ -2,12 +2,16 @@ package home.controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 
-public class Controller {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class Controller implements Initializable {
 
     @FXML
     private Button btnSobre;
@@ -91,5 +95,30 @@ public class Controller {
         {
 
         }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb)
+    {
+        pnMain.toFront();
+
+        pnPromocoes.setOpacity(0);
+        pnSobre.setOpacity(0);
+        pnHome.setOpacity(0);
     }
 }
