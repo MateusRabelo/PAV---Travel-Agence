@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane cacheShape="false" centerShape="false" scaleShape="false" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.controllers.Controller">
+<AnchorPane cacheShape="false" centerShape="false" scaleShape="false" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.controllers.Controller">
    <children>
       <BorderPane prefHeight="618.0" prefWidth="908.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <left>
@@ -82,7 +82,31 @@
          <center>
             <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-                  <Pane fx:id="pnMain" opacity="0.0" prefHeight="200.0" prefWidth="200.0">
+                  <Pane fx:id="pnMinhasPassagens" layoutX="10.0" layoutY="10.0" opacity="0.0" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <TableView layoutX="31.0" layoutY="72.0" prefHeight="519.0" prefWidth="653.0" stylesheets="@../css/fullpackstyling.css">
+                           <columns>
+                              <TableColumn prefWidth="71.0" text="ID" />
+                              <TableColumn prefWidth="97.0" text="DESTINO" />
+                              <TableColumn prefWidth="103.0" text="HORARIO" />
+                              <TableColumn prefWidth="112.0" text="DATA IDA" />
+                              <TableColumn prefWidth="128.0" text="DATA RETORNO" />
+                              <TableColumn prefWidth="128.0" text="POLTRONA" />
+                           </columns>
+                        </TableView>
+                        <Label layoutX="167.0" layoutY="17.0">
+                           <font>
+                              <Font name="DejaVu Sans Bold" size="28.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="31.0" layoutY="27.0" prefHeight="30.0" prefWidth="391.0" text="Suas passagens compradas:">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="pnWelcome" opacity="0.0" prefHeight="200.0" prefWidth="200.0">
                      <children>
                         <Label layoutX="195.0" layoutY="199.0" text="Agência PAV">
                            <font>
@@ -248,31 +272,7 @@
                         </ImageView>
                      </children>
                   </Pane>
-                  <Pane fx:id="pnPassagens" layoutX="10.0" layoutY="10.0" opacity="0.0" prefHeight="200.0" prefWidth="200.0">
-                     <children>
-                        <TableView layoutX="31.0" layoutY="72.0" prefHeight="519.0" prefWidth="653.0" stylesheets="@../css/fullpackstyling.css">
-                           <columns>
-                              <TableColumn prefWidth="71.0" text="ID" />
-                              <TableColumn prefWidth="97.0" text="DESTINO" />
-                              <TableColumn prefWidth="103.0" text="HORARIO" />
-                              <TableColumn prefWidth="112.0" text="DATA IDA" />
-                              <TableColumn prefWidth="128.0" text="DATA RETORNO" />
-                              <TableColumn prefWidth="128.0" text="POLTRONA" />
-                           </columns>
-                        </TableView>
-                        <Label layoutX="167.0" layoutY="17.0">
-                           <font>
-                              <Font name="DejaVu Sans Bold" size="28.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="31.0" layoutY="27.0" prefHeight="30.0" prefWidth="391.0" text="Suas passagens compradas:">
-                           <font>
-                              <Font name="System Bold" size="24.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </Pane>
-                  <Pane fx:id="pnPagamento" prefHeight="200.0" prefWidth="200.0">
+                  <Pane fx:id="pnPagamento" opacity="0.0" prefHeight="200.0" prefWidth="200.0">
                      <children>
                         <Label layoutX="49.0" layoutY="13.0" text="Passageiro">
                            <font>
@@ -287,19 +287,19 @@
                         <Label layoutX="49.0" layoutY="182.0" text="Data de nascimento" />
                         <TextField layoutX="49.0" layoutY="261.0" prefHeight="31.0" prefWidth="203.0" promptText="matheusrabelo@gmail.com" />
                         <Label layoutX="49.0" layoutY="242.0" text="E-mail" />
-                        <Label layoutX="53.0" layoutY="309.0" text="Pagador">
+                        <Label layoutX="406.0" layoutY="13.0" text="Pagador">
                            <font>
                               <Font name="System Bold" size="24.0" />
                            </font>
                         </Label>
-                        <TextField layoutX="53.0" layoutY="371.0" prefHeight="31.0" prefWidth="203.0" promptText="Nome completo" />
-                        <TextField layoutX="53.0" layoutY="432.0" prefHeight="31.0" prefWidth="203.0" promptText="CPF / CNPJ" />
-                        <Label layoutX="53.0" layoutY="353.0" text="Nome Completo" />
-                        <Label layoutX="53.0" layoutY="413.0" text="CPF / CNPJ" />
-                        <TextField layoutX="53.0" layoutY="491.0" prefHeight="31.0" prefWidth="203.0" promptText="00/00/0000" />
-                        <Label layoutX="53.0" layoutY="472.0" text="Data de nascimento" />
-                        <TextField layoutX="53.0" layoutY="550.0" prefHeight="31.0" prefWidth="203.0" promptText="matheusrabelo@gmail.com" />
-                        <Label layoutX="53.0" layoutY="531.0" text="E-mail" />
+                        <TextField layoutX="409.0" layoutY="82.0" prefHeight="31.0" prefWidth="203.0" promptText="Nome completo" />
+                        <TextField layoutX="409.0" layoutY="143.0" prefHeight="31.0" prefWidth="203.0" promptText="CPF / CNPJ" />
+                        <Label layoutX="409.0" layoutY="64.0" text="Nome Completo" />
+                        <Label layoutX="409.0" layoutY="124.0" text="CPF / CNPJ" />
+                        <TextField layoutX="409.0" layoutY="202.0" prefHeight="31.0" prefWidth="203.0" promptText="00/00/0000" />
+                        <Label layoutX="409.0" layoutY="183.0" text="Data de nascimento" />
+                        <TextField layoutX="409.0" layoutY="261.0" prefHeight="31.0" prefWidth="203.0" promptText="matheusrabelo@gmail.com" />
+                        <Label layoutX="409.0" layoutY="242.0" text="E-mail" />
                      </children>
                   </Pane>
                </children>
