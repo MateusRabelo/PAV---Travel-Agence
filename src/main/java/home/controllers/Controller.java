@@ -38,7 +38,7 @@ public class Controller implements Initializable {
     private Pane pnHome;
 
     @FXML
-    private Pane pnPromocoes;
+    private Pane pnPromocionais;
 
     @FXML
     private Pane pnSobre;
@@ -72,7 +72,7 @@ public class Controller implements Initializable {
             pnUsuario.setOpacity(1);
             pnHome.setOpacity(0);
             pnSobre.setOpacity(0);
-            pnPromocoes.setOpacity(0);
+            pnPromocionais.setOpacity(0);
         }
         else if (event.getSource() == btnInicio)
         {
@@ -80,7 +80,7 @@ public class Controller implements Initializable {
 
             pnHome.setOpacity(1);
             pnSobre.setOpacity(0);
-            pnPromocoes.setOpacity(0);
+            pnPromocionais.setOpacity(0);
             pnUsuario.setOpacity(0);
 
         }
@@ -90,14 +90,14 @@ public class Controller implements Initializable {
 
             pnSobre.setOpacity(1);
             pnHome.setOpacity(0);
-            pnPromocoes.setOpacity(0);
+            pnPromocionais.setOpacity(0);
             pnUsuario.setOpacity(0);
         }
         else if (event.getSource() == btnPromocoes)
         {
-            pnPromocoes.toFront();
+            pnPromocionais.toFront();
 
-            pnPromocoes.setOpacity(1);
+            pnPromocionais.setOpacity(1);
             pnSobre.setOpacity(0);
             pnHome.setOpacity(0);
             pnUsuario.setOpacity(0);
@@ -113,7 +113,7 @@ public class Controller implements Initializable {
         pnMain.toFront();
 
         pnUsuario.setOpacity(0);
-        pnPromocoes.setOpacity(0);
+        pnPromocionais.setOpacity(0);
         pnSobre.setOpacity(0);
         pnHome.setOpacity(0);
     }

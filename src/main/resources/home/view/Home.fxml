@@ -18,7 +18,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane cacheShape="false" centerShape="false" scaleShape="false" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.controllers.Controller">
+<AnchorPane cacheShape="false" centerShape="false" scaleShape="false" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.controllers.Controller">
    <children>
       <BorderPane prefHeight="618.0" prefWidth="908.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <left>
@@ -84,7 +84,7 @@
          <center>
             <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-                  <Pane fx:id="pnPromocoes" opacity="0.0" prefHeight="200.0" prefWidth="200.0">
+                  <Pane fx:id="pnPromocionais" opacity="0.0" prefHeight="200.0" prefWidth="200.0">
                      <children>
                         <Button layoutX="204.0" layoutY="248.0" mnemonicParsing="false" prefHeight="123.0" prefWidth="297.0" text="Button" />
                      </children>
@@ -144,7 +144,7 @@
                         </Label>
                      </children>
                   </Pane>
-                  <Pane opacity="0.0" prefHeight="200.0" prefWidth="200.0">
+                  <Pane fx:id="pnUsuario" opacity="0.0" prefHeight="200.0" prefWidth="200.0">
                      <children>
                         <Label layoutX="285.0" layoutY="195.0" prefHeight="25.0" prefWidth="141.0" text="Entrar na PAV">
                            <font>
