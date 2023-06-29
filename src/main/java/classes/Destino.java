@@ -11,7 +11,38 @@
 //+ setDescrição(String descricao): void
 
 
-        package classes;
+package classes;
 
 public class Destino {
+        private String nomeDestino, localizacao, descricao;
+
+        public String getNomeDestino()
+        {
+                return nomeDestino;
+        }
+
+        public void setNomeDestino(String nomeDestino)
+        {
+                this.nomeDestino = nomeDestino;
+        }
+
+        public String getLocalizacao()
+        {
+                return localizacao;
+        }
+
+        public void serLocalizacao(String localizacao)
+        {
+                this.localizacao = localizacao;
+        }
+
+        public String getDescricao()
+        {
+                return descricao;
+        }
+
+        public void setDescricao(String descricao)
+        {
+                this.descricao = descricao;
+        }
 }
