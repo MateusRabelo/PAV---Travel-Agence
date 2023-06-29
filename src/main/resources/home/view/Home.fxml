@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
@@ -15,7 +14,6 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane cacheShape="false" centerShape="false" scaleShape="false" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.controllers.Controller">
@@ -29,7 +27,7 @@
                         <Image url="@../imgs/logo2.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="btnUsuario" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="76.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="216.0" stylesheets="@../css/fullpackstyling.css" text="Usuario" textFill="WHITE">
+                  <Button fx:id="btnUsuario" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="76.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="55.0" prefWidth="216.0" stylesheets="@../css/fullpackstyling.css" text="Usuario" textFill="WHITE">
                      <graphic>
                         <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -84,42 +82,6 @@
          <center>
             <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-                  <Pane fx:id="pnPromocionais" opacity="0.0" prefHeight="200.0" prefWidth="200.0">
-                     <children>
-                        <Button layoutX="204.0" layoutY="248.0" mnemonicParsing="false" prefHeight="123.0" prefWidth="297.0" text="Button" />
-                     </children>
-                  </Pane>
-                  <Pane fx:id="pnSobre" opacity="0.0" prefHeight="200.0" prefWidth="200.0">
-                     <children>
-                        <ImageView fitHeight="210.0" fitWidth="319.0" layoutX="98.0" layoutY="413.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../imgs/icoAirplane.png" />
-                           </image>
-                        </ImageView>
-                        <Label accessibleText="Na PAV, estamos comprometidos em proporcionar a você uma experiência única e inesquecível ao explorar o mundo. Nosso nome, PAV, é uma abreviação de &quot;Passaporte Além das Vistas&quot;, refletindo nossa paixão por oferecer muito mais do que simplesmente destinos turísticos. Acreditamos que cada viagem é uma oportunidade para descobrir culturas fascinantes, conectar-se com pessoas incríveis e criar memórias duradouras." alignment="CENTER" layoutX="14.0" layoutY="64.0" lineSpacing="5.0" prefHeight="355.0" prefWidth="305.0" text="Na PAV, garantimos à você experiências únicas e inesquecíveis ao explorar o mundo. Nosso objetivo ao desenvolver a PAV  é refletir nossa paixão por oferer muito mais do que simplesmente destinos turísticos. Aqui, acreditamos que cada viagem é uma oportunidade de conectar-se com pessoas incríveis e criar memórias duradouras" textAlignment="JUSTIFY" textOverrun="CLIP" wrapText="true">
-                           <font>
-                              <Font name="System Bold" size="18.0" />
-                           </font>
-                           <opaqueInsets>
-                              <Insets />
-                           </opaqueInsets>
-                        </Label>
-                        <Label accessibleText="Na PAV, estamos comprometidos em proporcionar a você uma experiência única e inesquecível ao explorar o mundo. Nosso nome, PAV, é uma abreviação de &quot;Passaporte Além das Vistas&quot;, refletindo nossa paixão por oferecer muito mais do que simplesmente destinos turísticos. Acreditamos que cada viagem é uma oportunidade para descobrir culturas fascinantes, conectar-se com pessoas incríveis e criar memórias duradouras." alignment="CENTER" layoutX="376.0" layoutY="34.0" lineSpacing="5.0" prefHeight="319.0" prefWidth="296.0" text="Como um projeto de POO em Java, desenvlvemos a PAV com foco na eficiência, facilidade de uso e flexibilidade.como um projeto de POO em Java, desenvlvemos a PAV com foco na eficiência, facilidade de uso e flexibilidade." textAlignment="JUSTIFY" textOverrun="CLIP" wrapText="true">
-                           <font>
-                              <Font name="System Bold" size="18.0" />
-                           </font>
-                           <opaqueInsets>
-                              <Insets />
-                           </opaqueInsets>
-                        </Label>
-                        <Line endX="2.200042724609375" endY="365.0" layoutX="345.0" layoutY="47.0" startX="2.200103759765625" startY="-15.800006866455078" />
-                        <ImageView fitHeight="289.0" fitWidth="290.0" layoutX="380.0" layoutY="315.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../imgs/icoSmiley.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </Pane>
                   <Pane fx:id="pnMain" opacity="0.0" prefHeight="200.0" prefWidth="200.0">
                      <children>
                         <Label layoutX="195.0" layoutY="199.0" text="Agência PAV">
@@ -195,7 +157,7 @@
                         </Label>
                      </children>
                   </Pane>
-                  <Pane fx:id="pnPromocionais" prefHeight="200.0" prefWidth="200.0">
+                  <Pane fx:id="pnPromocionais" opacity="0.0" prefHeight="200.0" prefWidth="200.0">
                      <children>
                         <TextField fx:id="txtCidadeOrigem1" layoutX="33.0" layoutY="71.0" prefHeight="29.0" prefWidth="139.0" promptText="Origem" stylesheets="@../css/fullpackstyling.css" />
                         <TextField fx:id="txtCidadeDestino1" layoutX="180.0" layoutY="70.0" prefHeight="29.0" prefWidth="139.0" promptText="Destino" stylesheets="@../css/fullpackstyling.css" />
@@ -243,6 +205,47 @@
                               <Font name="DejaVu Sans Bold" size="28.0" />
                            </font>
                         </Label>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="pnSobre" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="49.0" layoutY="91.0" text="Sobre">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="49.0" layoutY="131.0" prefHeight="114.0" prefWidth="603.0" text="Na PAV, garantimos à você experiências únicas e inesquecíveis ao explorar o mundo. Nosso objetivo ao desenvolver a PAV  é refletir nossa paixão por oferer muito mais do que simplesmente destinos turísticos. Aqui, acreditamos que cada viagem é uma oportunidade de conectar-se com pessoas incríveis e criar memórias duradouras." wrapText="true">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="49.0" layoutY="245.0" prefHeight="78.0" prefWidth="617.0" text="Como um projeto de POO em Java, desenvlvemos a PAV com foco na eficiência, facilidade de uso e flexibilidade.como um projeto de POO em Java, desenvlvemos a PAV com foco na eficiência, facilidade de uso e flexibilidade." wrapText="true">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="233.0" layoutY="379.0" text="614.147.283-44">
+                           <graphic>
+                              <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../imgs/pix.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="313.0" layoutY="340.0" text="Apoie:">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="165.0" fitWidth="200.0" layoutX="270.0" layoutY="439.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../imgs/qrcode.jpeg" />
+                           </image>
+                        </ImageView>
                      </children>
                   </Pane>
                </children>
