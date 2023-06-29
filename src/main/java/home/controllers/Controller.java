@@ -28,6 +28,9 @@ public class Controller {
     private Button btnUsuario;
 
     @FXML
+    private Pane pnMain;
+
+    @FXML
     private Pane pnHome;
 
     @FXML
@@ -51,6 +54,7 @@ public class Controller {
     @FXML
     private void handleClicks(ActionEvent event)
     {
+        pnMain.setOpacity(0);
         if (event.getSource() == btnSobre)
         {
             pnSobre.toFront();

@@ -55,7 +55,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button fx:id="btnMinhasPassagens" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="65.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="55.0" prefWidth="230.0" stylesheets="@../css/fullpackstyling.css" text="Minhas Passagens" textFill="WHITE">
+                  <Button fx:id="btnMinhasPassagens" alignment="BASELINE_LEFT" disable="true" graphicTextGap="10.0" layoutX="10.0" layoutY="65.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="55.0" prefWidth="230.0" stylesheets="@../css/fullpackstyling.css" text="Minhas Passagens" textFill="WHITE">
                      <graphic>
                         <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -83,12 +83,12 @@
          <center>
             <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-                  <Pane fx:id="pnPromocoes" prefHeight="200.0" prefWidth="200.0">
+                  <Pane fx:id="pnPromocoes" opacity="0.0" prefHeight="200.0" prefWidth="200.0">
                      <children>
                         <Button layoutX="204.0" layoutY="248.0" mnemonicParsing="false" prefHeight="123.0" prefWidth="297.0" text="Button" />
                      </children>
                   </Pane>
-                  <Pane fx:id="pnHome" prefHeight="200.0" prefWidth="200.0">
+                  <Pane fx:id="pnHome" opacity="0.0" prefHeight="200.0" prefWidth="200.0">
                      <children>
                         <TextField fx:id="txtCidadeOrigem" layoutX="42.0" layoutY="71.0" prefHeight="29.0" prefWidth="139.0" promptText="Origem" />
                         <TextField fx:id="txtCidadeDestino" layoutX="189.0" layoutY="70.0" prefHeight="29.0" prefWidth="139.0" promptText="Destino" />
@@ -110,7 +110,7 @@
                         </Label>
                      </children>
                   </Pane>
-                  <Pane fx:id="pnSobre" prefHeight="200.0" prefWidth="200.0">
+                  <Pane fx:id="pnSobre" opacity="0.0" prefHeight="200.0" prefWidth="200.0">
                      <children>
                         <ImageView fitHeight="210.0" fitWidth="319.0" layoutX="98.0" layoutY="413.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -139,6 +139,30 @@
                               <Image url="@../imgs/icoSmiley.png" />
                            </image>
                         </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="pnMain" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="195.0" layoutY="199.0" text="Agência PAV">
+                           <font>
+                              <Font name="Arial Bold" size="48.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="51.0" layoutY="282.0" text="&quot;Passagens alé da vista&quot;">
+                           <font>
+                              <Font name="Arial Bold" size="48.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="103.0" layoutY="57.0" prefHeight="135.0" prefWidth="499.0" text="Seja bem-vindo!">
+                           <font>
+                              <Font name="Arial Bold" size="64.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="124.0" layoutY="397.0" text="Escolha uma opção para começar">
+                           <font>
+                              <Font size="31.0" />
+                           </font>
+                        </Label>
                      </children>
                   </Pane>
                </children>
