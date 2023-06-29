@@ -91,8 +91,7 @@ public class Controller implements Initializable {
             pnSobre.setOpacity(0);
             pnHome.setOpacity(0);
         }
-        else if (event.getSource() == btnMinhasPassagens)
-        {
+        else if (event.getSource() == btnMinhasPassagens) {
 
         }
     }
