@@ -20,6 +20,7 @@
 
 package home.classes;
 import home.controllers.*;
+import javafx.scene.control.TextField;
 
 public class Usuario {
     private String nome, cpf, endereco, email;
@@ -76,8 +77,12 @@ public class Usuario {
         this.email = email;
     }
 
-    public boolean isLogado()
+    public static boolean isLogado(TextField txtUsuario, TextField txtSenha)
     {
-        if
+        if(txtUsuario.getText().equals("admin") && txtSenha.getText().equals("admin"))
+        {
+            return true;
+        }
+        return false;
     }
 }
