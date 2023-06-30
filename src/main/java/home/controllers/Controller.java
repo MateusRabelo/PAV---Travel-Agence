@@ -1,5 +1,5 @@
 package home.controllers;
-
+import home.classes.*;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -95,6 +95,8 @@ public class Controller implements Initializable {
 
 
 
+    // method to non-specified action click
+
     @FXML
     private void handleClicks(ActionEvent event)
     {
@@ -151,6 +153,7 @@ public class Controller implements Initializable {
         }
     }
 
+    // to certificate than all initializing correctly
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
