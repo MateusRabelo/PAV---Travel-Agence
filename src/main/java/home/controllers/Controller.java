@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 
@@ -20,6 +21,21 @@ public class Controller implements Initializable {
     private Button btnBuscarPromo;
 
     @FXML
+    private Button btnCartao;
+
+    @FXML
+    private Button btnConfirmar;
+
+    @FXML
+    private ImageView btnImageCartao;
+
+    @FXML
+    private ImageView btnImagePix;
+
+    @FXML
+    private ImageView btnImageTransferencia;
+
+    @FXML
     private Button btnInicio;
 
     @FXML
@@ -29,13 +45,25 @@ public class Controller implements Initializable {
     private Button btnMinhasPassagens;
 
     @FXML
+    private Button btnPix;
+
+    @FXML
     private Button btnPromocoes;
 
     @FXML
     private Button btnSobre;
 
     @FXML
+    private Button btnTransferencia;
+
+    @FXML
     private Button btnUsuario;
+
+    @FXML
+    private ImageView imgQrcode;
+
+    @FXML
+    private Label lblPixStatus;
 
     @FXML
     private Label lblUsuarioStatus;
@@ -77,6 +105,9 @@ public class Controller implements Initializable {
     private TextField txtCidadeOrigemPromo;
 
     @FXML
+    private TextField txtCpf;
+
+    @FXML
     private DatePicker txtDiaIda1;
 
     @FXML
@@ -89,10 +120,20 @@ public class Controller implements Initializable {
     private DatePicker txtDiaRetornoPromo;
 
     @FXML
+    private TextField txtEmail;
+
+    @FXML
+    private DatePicker txtNascimento;
+
+    @FXML
+    private TextField txtNomeCompleto;
+
+    @FXML
     private PasswordField txtSenha;
 
     @FXML
     private TextField txtUsuario;
+
 
 
 
@@ -162,7 +203,6 @@ public class Controller implements Initializable {
             if(event.getSource() == btnMinhasPassagens)
             {
                 pnMinhasPassagens.toFront();
-
                 pnMinhasPassagens.setOpacity(1);
                 pnPromocionais.setOpacity(0);
                 pnSobre.setOpacity(0);
