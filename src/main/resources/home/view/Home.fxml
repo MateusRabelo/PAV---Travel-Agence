@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
@@ -16,13 +17,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane cacheShape="false" centerShape="false" scaleShape="false" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.controllers.Controller">
+<AnchorPane cacheShape="false" centerShape="false" prefHeight="618.0" prefWidth="1076.0" scaleShape="false" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.controllers.Controller">
    <children>
       <BorderPane prefHeight="618.0" prefWidth="908.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <left>
-            <VBox prefHeight="618.0" prefWidth="202.0" style="-fx-background-color: #252525;">
+            <VBox prefHeight="618.0" prefWidth="102.0" style="-fx-background-color: #252525;">
                <children>
-                  <ImageView fitHeight="66.0" fitWidth="184.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="118.0" fitWidth="183.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../imgs/logo2.png" />
                      </image>
@@ -72,91 +73,19 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <ImageView fitHeight="183.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="183.0" fitWidth="182.0" pickOnBounds="true" preserveRatio="true" />
                   <Label alignment="BASELINE_CENTER" prefHeight="16.0" prefWidth="207.0" text="© 2023 - PAV" textFill="WHITE" />
                   <Label alignment="BASELINE_CENTER" layoutX="10.0" layoutY="534.0" prefHeight="16.0" prefWidth="207.0" text="Todos direitos Reservados" textFill="WHITE" />
                   <Label alignment="BASELINE_CENTER" layoutX="10.0" layoutY="550.0" prefHeight="16.0" prefWidth="207.0" text="V 12.039" textFill="WHITE" />
                </children>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
             </VBox>
          </left>
          <center>
             <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-                  <Pane fx:id="pnMinhasPassagens" layoutX="10.0" layoutY="10.0" opacity="0.0" prefHeight="200.0" prefWidth="200.0">
-                     <children>
-                        <TableView layoutX="31.0" layoutY="72.0" prefHeight="519.0" prefWidth="653.0" stylesheets="@../css/fullpackstyling.css">
-                           <columns>
-                              <TableColumn prefWidth="71.0" text="ID" />
-                              <TableColumn prefWidth="97.0" text="DESTINO" />
-                              <TableColumn prefWidth="103.0" text="HORARIO" />
-                              <TableColumn prefWidth="112.0" text="DATA IDA" />
-                              <TableColumn prefWidth="128.0" text="DATA RETORNO" />
-                              <TableColumn prefWidth="128.0" text="POLTRONA" />
-                           </columns>
-                        </TableView>
-                        <Label layoutX="167.0" layoutY="17.0">
-                           <font>
-                              <Font name="DejaVu Sans Bold" size="28.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="31.0" layoutY="27.0" prefHeight="30.0" prefWidth="391.0" text="Suas passagens compradas:">
-                           <font>
-                              <Font name="System Bold" size="24.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </Pane>
-                  <Pane fx:id="pnWelcome" opacity="0.0" prefHeight="200.0" prefWidth="200.0">
-                     <children>
-                        <Label layoutX="195.0" layoutY="199.0" text="Agência PAV">
-                           <font>
-                              <Font name="Arial Bold" size="48.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="34.0" layoutY="280.0" text="&quot;Passagens além da vista&quot;">
-                           <font>
-                              <Font name="Arial Bold" size="48.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="103.0" layoutY="57.0" prefHeight="135.0" prefWidth="540.0" text="Seja bem-vindo!">
-                           <font>
-                              <Font name="Arial Bold" size="64.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="90.0" layoutY="360.0" text="Escolha uma opção para começar">
-                           <font>
-                              <Font size="31.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </Pane>
-                  <Pane fx:id="pnUsuario" opacity="0.0" prefHeight="200.0" prefWidth="200.0">
-                     <children>
-                        <Label layoutX="285.0" layoutY="195.0" prefHeight="25.0" prefWidth="141.0" text="Entrar na PAV">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Label>
-                        <TextField fx:id="txtUsuario" layoutX="268.0" layoutY="248.0" prefHeight="26.0" prefWidth="173.0" promptText="Username" stylesheets="@../css/fullpackstyling.css" />
-                        <PasswordField fx:id="txtSenha" layoutX="268.0" layoutY="296.0" prefHeight="26.0" prefWidth="173.0" promptText="Senha" stylesheets="@../css/fullpackstyling.css" />
-                        <Button fx:id="btnLogin" layoutX="296.0" layoutY="347.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="114.0" stylesheets="@../css/fullpackstyling.css" text="Login" />
-                        <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="328.0" layoutY="131.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../imgs/LoginIcon.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="235.0" layoutY="249.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../imgs/userLogin.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="235.0" layoutY="297.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../imgs/senhaLogin.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </Pane>
                   <Pane fx:id="pnLogado" opacity="0.0" prefHeight="200.0" prefWidth="200.0">
                      <children>
                         <Label layoutX="70.0" layoutY="91.0" prefHeight="25.0" prefWidth="115.0" text="Alvaro Santos">
@@ -179,97 +108,6 @@
                               <Font name="System Bold" size="20.0" />
                            </font>
                         </Label>
-                     </children>
-                  </Pane>
-                  <Pane fx:id="pnPromocionais" opacity="0.0" prefHeight="200.0" prefWidth="200.0">
-                     <children>
-                        <TextField fx:id="txtCidadeOrigem1" layoutX="33.0" layoutY="71.0" prefHeight="29.0" prefWidth="139.0" promptText="Origem" stylesheets="@../css/fullpackstyling.css" />
-                        <TextField fx:id="txtCidadeDestino1" layoutX="180.0" layoutY="70.0" prefHeight="29.0" prefWidth="139.0" promptText="Destino" stylesheets="@../css/fullpackstyling.css" />
-                        <DatePicker fx:id="txtDiaIda1" layoutX="326.0" layoutY="70.0" prefHeight="29.0" prefWidth="139.0" promptText="Ida" />
-                        <DatePicker fx:id="txtDiaRetorno1" layoutX="471.0" layoutY="70.0" prefHeight="29.0" prefWidth="139.0" promptText="Retorno" />
-                        <Button fx:id="btnBuscar1" layoutX="624.0" layoutY="70.0" mnemonicParsing="false" prefHeight="29.0" stylesheets="@../css/fullpackstyling.css" text="Buscar" />
-                        <TableView layoutX="31.0" layoutY="125.0" prefHeight="459.0" prefWidth="653.0" stylesheets="@../css/fullpackstyling.css">
-                           <columns>
-                              <TableColumn prefWidth="81.0" text="ID" />
-                              <TableColumn prefWidth="218.0" text="DESTINO" />
-                              <TableColumn prefWidth="115.0" text="HORARIO" />
-                              <TableColumn prefWidth="115.0" text="VAGAS" />
-                              <TableColumn prefWidth="123.0" text="OFERTA" />
-                           </columns>
-                        </TableView>
-                        <Label layoutX="167.0" layoutY="17.0" text="Passagens com Desconto">
-                           <font>
-                              <Font name="DejaVu Sans Bold" size="28.0" />
-                           </font>
-                        </Label>
-                        <ImageView fitHeight="46.0" fitWidth="54.0" layoutX="113.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../imgs/IconPromo.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </Pane>
-                  <Pane fx:id="pnHome" opacity="0.0" prefHeight="200.0" prefWidth="200.0">
-                     <children>
-                        <TextField fx:id="txtCidadeOrigemPromo" layoutX="31.0" layoutY="71.0" prefHeight="29.0" prefWidth="139.0" promptText="Origem" stylesheets="@../css/fullpackstyling.css" />
-                        <TextField fx:id="txtCidadeDestinoPromo" layoutX="178.0" layoutY="70.0" prefHeight="29.0" prefWidth="139.0" promptText="Destino" stylesheets="@../css/fullpackstyling.css" />
-                        <DatePicker fx:id="txtDiaIdaPromo" layoutX="324.0" layoutY="70.0" prefHeight="29.0" prefWidth="139.0" promptText="Ida" />
-                        <DatePicker fx:id="txtDiaRetornoPromo" layoutX="469.0" layoutY="70.0" prefHeight="29.0" prefWidth="139.0" promptText="Retorno" />
-                        <Button fx:id="btnBuscarPromo" layoutX="622.0" layoutY="70.0" mnemonicParsing="false" prefHeight="29.0" stylesheets="@../css/fullpackstyling.css" text="Buscar" />
-                        <TableView layoutX="31.0" layoutY="125.0" prefHeight="459.0" prefWidth="653.0" stylesheets="@../css/fullpackstyling.css">
-                          <columns>
-                            <TableColumn prefWidth="81.0" text="ID" />
-                              <TableColumn prefWidth="123.0" text="HORARIO" />
-                              <TableColumn prefWidth="124.0" text="VAGAS" />
-                              <TableColumn prefWidth="182.0" text="PREÇO" />
-                          </columns>
-                        </TableView>
-                        <Label layoutX="167.0" layoutY="21.0" text="Bem vindo a Agencia PAV">
-                           <font>
-                              <Font name="DejaVu Sans Bold" size="28.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </Pane>
-                  <Pane fx:id="pnSobre" opacity="0.0" prefHeight="200.0" prefWidth="200.0">
-                     <children>
-                        <Label layoutX="49.0" layoutY="91.0" text="Sobre">
-                           <font>
-                              <Font name="System Bold" size="24.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="49.0" layoutY="131.0" prefHeight="114.0" prefWidth="603.0" text="Na PAV, garantimos à você experiências únicas e inesquecíveis ao explorar o mundo. Nosso objetivo ao desenvolver a PAV  é refletir nossa paixão por oferer muito mais do que simplesmente destinos turísticos. Aqui, acreditamos que cada viagem é uma oportunidade de conectar-se com pessoas incríveis e criar memórias duradouras." wrapText="true">
-                           <font>
-                              <Font size="15.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="49.0" layoutY="245.0" prefHeight="78.0" prefWidth="617.0" text="Como um projeto de POO em Java, desenvlvemos a PAV com foco na eficiência, facilidade de uso e flexibilidade.como um projeto de POO em Java, desenvlvemos a PAV com foco na eficiência, facilidade de uso e flexibilidade." wrapText="true">
-                           <font>
-                              <Font size="15.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="233.0" layoutY="379.0" text="614.147.283-44">
-                           <graphic>
-                              <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../imgs/pix.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="313.0" layoutY="340.0" text="Apoie:">
-                           <font>
-                              <Font name="System Bold" size="24.0" />
-                           </font>
-                        </Label>
-                        <ImageView fitHeight="165.0" fitWidth="200.0" layoutX="270.0" layoutY="439.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../imgs/qrcode.jpeg" />
-                           </image>
-                        </ImageView>
                      </children>
                   </Pane>
                   <Pane fx:id="pnPagamento" opacity="0.0" prefHeight="200.0" prefWidth="200.0">
@@ -300,6 +138,159 @@
                         <Label layoutX="409.0" layoutY="183.0" text="Data de nascimento" />
                         <TextField layoutX="409.0" layoutY="261.0" prefHeight="31.0" prefWidth="203.0" promptText="matheusrabelo@gmail.com" />
                         <Label layoutX="409.0" layoutY="242.0" text="E-mail" />
+                     </children>
+                  </Pane>
+                  <Pane fx:id="pnMinhasPassagens" layoutX="10.0" layoutY="10.0" opacity="0.0" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <TableView layoutX="20.0" layoutY="70.0" prefHeight="519.0" prefWidth="847.0" stylesheets="@../css/fullpackstyling.css">
+                           <columns>
+                              <TableColumn prefWidth="71.0" text="ID" />
+                              <TableColumn prefWidth="97.0" text="DESTINO" />
+                              <TableColumn prefWidth="103.0" text="HORARIO" />
+                              <TableColumn prefWidth="112.0" text="DATA IDA" />
+                              <TableColumn prefWidth="128.0" text="DATA RETORNO" />
+                              <TableColumn prefWidth="128.0" text="POLTRONA" />
+                           </columns>
+                        </TableView>
+                        <Label layoutX="167.0" layoutY="17.0">
+                           <font>
+                              <Font name="DejaVu Sans Bold" size="28.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="20.0" layoutY="22.0" prefHeight="30.0" prefWidth="391.0" text="Sua lista de passagens:">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="pnUsuario" opacity="0.0" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="376.0" layoutY="196.0" prefHeight="25.0" prefWidth="141.0" text="Entrar na PAV">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtUsuario" layoutX="359.0" layoutY="249.0" prefHeight="26.0" prefWidth="173.0" promptText="Username" stylesheets="@../css/fullpackstyling.css" />
+                        <PasswordField fx:id="txtSenha" layoutX="359.0" layoutY="297.0" prefHeight="26.0" prefWidth="173.0" promptText="Senha" stylesheets="@../css/fullpackstyling.css" />
+                        <Button fx:id="btnLogin" layoutX="387.0" layoutY="348.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="114.0" stylesheets="@../css/fullpackstyling.css" text="Login" />
+                        <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="419.0" layoutY="132.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../imgs/LoginIcon.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="325.0" layoutY="251.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../imgs/userLogin.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="325.0" layoutY="299.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../imgs/senhaLogin.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="pnPromocionais" opacity="0.0" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="txtCidadeOrigem1" layoutX="119.0" layoutY="73.0" prefHeight="29.0" prefWidth="139.0" promptText="Origem" stylesheets="@../css/fullpackstyling.css" />
+                        <TextField fx:id="txtCidadeDestino1" layoutX="266.0" layoutY="73.0" prefHeight="29.0" prefWidth="139.0" promptText="Destino" stylesheets="@../css/fullpackstyling.css" />
+                        <DatePicker fx:id="txtDiaIda1" layoutX="412.0" layoutY="73.0" prefHeight="29.0" prefWidth="139.0" promptText="Ida" />
+                        <DatePicker fx:id="txtDiaRetorno1" layoutX="557.0" layoutY="73.0" prefHeight="29.0" prefWidth="139.0" promptText="Retorno" />
+                        <Button fx:id="btnBuscar1" layoutX="710.0" layoutY="73.0" mnemonicParsing="false" prefHeight="29.0" stylesheets="@../css/fullpackstyling.css" text="Buscar" />
+                        <TableView layoutX="31.0" layoutY="125.0" prefHeight="459.0" prefWidth="828.0" stylesheets="@../css/fullpackstyling.css">
+                           <columns>
+                              <TableColumn prefWidth="81.0" text="ID" />
+                              <TableColumn prefWidth="120.0" text="DESTINO" />
+                              <TableColumn prefWidth="101.0" text="HORARIO" />
+                              <TableColumn prefWidth="96.0" text="VAGAS" />
+                              <TableColumn prefWidth="90.0" text="OFERTA" />
+                              <TableColumn prefWidth="90.0" text="DATA IDA" />
+                              <TableColumn prefWidth="133.0" text="DATA LIMITE" />
+                           </columns>
+                        </TableView>
+                        <Label layoutX="245.0" layoutY="18.0" text="Passagens com Desconto">
+                           <font>
+                              <Font name="DejaVu Sans Bold" size="28.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="46.0" fitWidth="54.0" layoutX="189.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../imgs/IconPromo.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="pnHome" opacity="0.0" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="txtCidadeOrigemPromo" layoutX="116.0" layoutY="70.0" prefHeight="29.0" prefWidth="139.0" promptText="Origem" stylesheets="@../css/fullpackstyling.css" />
+                        <TextField fx:id="txtCidadeDestinoPromo" layoutX="263.0" layoutY="69.0" prefHeight="29.0" prefWidth="139.0" promptText="Destino" stylesheets="@../css/fullpackstyling.css" />
+                        <DatePicker fx:id="txtDiaIdaPromo" layoutX="409.0" layoutY="69.0" prefHeight="29.0" prefWidth="139.0" promptText="Ida" />
+                        <DatePicker fx:id="txtDiaRetornoPromo" layoutX="554.0" layoutY="69.0" prefHeight="29.0" prefWidth="139.0" promptText="Retorno" />
+                        <Button fx:id="btnBuscarPromo" layoutX="707.0" layoutY="69.0" mnemonicParsing="false" prefHeight="29.0" stylesheets="@../css/fullpackstyling.css" text="Buscar" />
+                        <TableView layoutX="31.0" layoutY="125.0" prefHeight="459.0" prefWidth="824.0" stylesheets="@../css/fullpackstyling.css">
+                          <columns>
+                            <TableColumn prefWidth="81.0" text="ID" />
+                              <TableColumn prefWidth="123.0" text="HORARIO" />
+                              <TableColumn prefWidth="124.0" text="VAGAS" />
+                              <TableColumn prefWidth="182.0" text="PREÇO" />
+                          </columns>
+                        </TableView>
+                        <Label layoutX="209.0" layoutY="25.0" text="Procure seu proximo destino!">
+                           <font>
+                              <Font name="DejaVu Sans Bold" size="28.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="pnSobre" opacity="0.0" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="49.0" layoutY="91.0" text="Sobre">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="49.0" layoutY="131.0" prefHeight="114.0" prefWidth="790.0" text="Na PAV, garantimos à você experiências únicas e inesquecíveis ao explorar o mundo. Nosso objetivo ao desenvolver a PAV  é refletir nossa paixão por oferer muito mais do que simplesmente destinos turísticos. Aqui, acreditamos que cada viagem é uma oportunidade de conectar-se com pessoas incríveis e criar memórias duradouras." wrapText="true">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="49.0" layoutY="245.0" prefHeight="78.0" prefWidth="791.0" text="Como um projeto de POO em Java, desenvlvemos a PAV com foco na eficiência, facilidade de uso e flexibilidade.como um projeto de POO em Java, desenvlvemos a PAV com foco na eficiência, facilidade de uso e flexibilidade." wrapText="true">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="569.0" layoutY="516.0" text="614.147.283-44">
+                           <graphic>
+                              <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../imgs/pix.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="644.0" layoutY="308.0" text="Apoie:">
+                           <font>
+                              <Font name="System Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="165.0" fitWidth="200.0" layoutX="600.0" layoutY="340.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../imgs/qrcode.jpeg" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="pnWelcome" prefHeight="618.0" prefWidth="756.0">
+                     <children>
+                        <ImageView fitHeight="618.0" fitWidth="917.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../imgs/welcome.jpg" />
+                           </image>
+                        </ImageView>
                      </children>
                   </Pane>
                </children>
