@@ -4,11 +4,9 @@ import home.classes.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
+import javafx.scene.text.Text;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -38,6 +36,9 @@ public class Controller implements Initializable {
 
     @FXML
     private Button btnUsuario;
+
+    @FXML
+    private Label lblUsuarioStatus;
 
     @FXML
     private Pane pnHome;
@@ -102,17 +103,7 @@ public class Controller implements Initializable {
     {
         pnWelcome .setOpacity(0);
 
-        if (event.getSource() == btnUsuario)
-        {
-            pnUsuario.toFront();
-
-            pnUsuario.setOpacity(1);
-            pnHome.setOpacity(0);
-            pnSobre.setOpacity(0);
-            pnPromocionais.setOpacity(0);
-            pnMinhasPassagens.setOpacity(0);
-        }
-        else if (event.getSource() == btnInicio)
+        if (event.getSource() == btnInicio)
         {
             pnHome.toFront();
 
@@ -121,6 +112,7 @@ public class Controller implements Initializable {
             pnPromocionais.setOpacity(0);
             pnUsuario.setOpacity(0);
             pnMinhasPassagens.setOpacity(0);
+            pnLogado.setOpacity(0);
         }
         else if (event.getSource() == btnSobre)
         {
@@ -131,6 +123,7 @@ public class Controller implements Initializable {
             pnPromocionais.setOpacity(0);
             pnUsuario.setOpacity(0);
             pnMinhasPassagens.setOpacity(0);
+            pnLogado.setOpacity(0);
         }
         else if (event.getSource() == btnPromocoes)
         {
@@ -141,17 +134,69 @@ public class Controller implements Initializable {
             pnHome.setOpacity(0);
             pnUsuario.setOpacity(0);
             pnMinhasPassagens.setOpacity(0);
+            pnLogado.setOpacity(0);
         }
-        else if (event.getSource() == btnMinhasPassagens) {
-            pnMinhasPassagens.toFront();
 
-            pnMinhasPassagens.setOpacity(1);
-            pnSobre.setOpacity(0);
-            pnPromocionais.setOpacity(0);
-            pnHome.setOpacity(0);
+    }
+
+
+
+    // region of Pane "Logado"
+
+    @FXML
+    public void handleLogin(ActionEvent event)
+    {
+        pnWelcome.setOpacity(0);
+        pnHome.setOpacity(0);
+        pnPromocionais.setOpacity(0);
+        pnSobre.setOpacity(0);
+        pnPagamento.setOpacity(0);
+
+        if(Usuario.isLogado(txtUsuario, txtSenha))
+        {
+            pnLogado.toFront();
+            pnLogado.setOpacity(1);
+
             pnUsuario.setOpacity(0);
+
+            if(event.getSource() == btnMinhasPassagens)
+            {
+                pnMinhasPassagens.toFront();
+                pnMinhasPassagens.setOpacity(1);
+
+                pnPromocionais.setOpacity(0);
+                pnSobre.setOpacity(0);
+                pnHome.setOpacity(0);
+                pnUsuario.setOpacity(0);
+                pnLogado.setOpacity(0);
+            }
+        }
+        else
+        {
+            pnUsuario.toFront();
+            pnUsuario.setOpacity(1);
+
+            if(!txtUsuario.getText().isEmpty())
+            {
+                lblUsuarioStatus.setText("Usuário ou senha incorreto");
+            }
         }
     }
+
+    // region of Pane "Usuario"
+
+    // region of Pane "Inicio"
+
+    // region of Pane "Promocionais"
+
+    // region of Pane "Minhas Passagens"
+
+    // region of Pane "Sobre"
+
+
+
+
+
 
     // to certificate than all initializing correctly
     @Override
@@ -159,11 +204,10 @@ public class Controller implements Initializable {
     {
         pnWelcome.toFront();
 
+        pnWelcome.setOpacity(1);
         pnUsuario.setOpacity(0);
         pnPromocionais.setOpacity(0);
         pnSobre.setOpacity(0);
         pnHome.setOpacity(0);
     }
-
-
 }
