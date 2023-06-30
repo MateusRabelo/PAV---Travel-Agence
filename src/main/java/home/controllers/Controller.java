@@ -162,8 +162,8 @@ public class Controller implements Initializable {
             if(event.getSource() == btnMinhasPassagens)
             {
                 pnMinhasPassagens.toFront();
-                pnMinhasPassagens.setOpacity(1);
 
+                pnMinhasPassagens.setOpacity(1);
                 pnPromocionais.setOpacity(0);
                 pnSobre.setOpacity(0);
                 pnHome.setOpacity(0);
