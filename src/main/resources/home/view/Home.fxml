@@ -17,7 +17,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane cacheShape="false" centerShape="false" prefHeight="618.0" prefWidth="1076.0" scaleShape="false" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.controllers.Controller">
+<AnchorPane cacheShape="false" centerShape="false" prefHeight="618.0" prefWidth="1076.0" scaleShape="false" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.controllers.Controller">
    <children>
       <BorderPane prefHeight="618.0" prefWidth="908.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <left>
@@ -124,12 +124,12 @@
                         <DatePicker fx:id="txtDiaRetornoPromo" layoutX="554.0" layoutY="69.0" prefHeight="29.0" prefWidth="139.0" promptText="Retorno" />
                         <Button fx:id="btnBuscarPromo" layoutX="707.0" layoutY="69.0" mnemonicParsing="false" prefHeight="29.0" stylesheets="@../css/fullpackstyling.css" text="Buscar" />
                         <TableView layoutX="31.0" layoutY="125.0" prefHeight="459.0" prefWidth="824.0" stylesheets="@../css/fullpackstyling.css">
-                          <columns>
-                            <TableColumn prefWidth="81.0" text="ID" />
+                           <columns>
+                              <TableColumn prefWidth="81.0" text="ID" />
                               <TableColumn prefWidth="123.0" text="HORARIO" />
                               <TableColumn prefWidth="124.0" text="VAGAS" />
                               <TableColumn prefWidth="182.0" text="PREÇO" />
-                          </columns>
+                           </columns>
                         </TableView>
                         <Label layoutX="209.0" layoutY="25.0" text="Procure seu proximo destino!">
                            <font>
@@ -259,71 +259,6 @@
                         </Label>
                      </children>
                   </Pane>
-                  <Pane fx:id="pnPagamentoPix" layoutX="10.0" layoutY="10.0" opacity="0.0" prefHeight="200.0" prefWidth="200.0">
-                     <children>
-                        <Label layoutX="49.0" layoutY="13.0" text="Dados para pagamento">
-                           <font>
-                              <Font name="System Bold" size="24.0" />
-                           </font>
-                        </Label>
-                        <TextField fx:id="btnNomeCompleto" layoutX="49.0" layoutY="100.0" prefHeight="31.0" prefWidth="203.0" promptText="Nome completo" />
-                        <TextField fx:id="btnCpf" layoutX="263.0" layoutY="100.0" prefHeight="31.0" prefWidth="203.0" promptText="CPF" />
-                        <Label layoutX="49.0" layoutY="83.0" text="Nome Completo" />
-                        <Label layoutX="263.0" layoutY="83.0" text="CPF" />
-                        <Label layoutX="49.0" layoutY="139.0" text="Data de nascimento" />
-                        <TextField fx:id="btnEmail" layoutX="263.0" layoutY="158.0" prefHeight="31.0" prefWidth="203.0" promptText="matheusrabelo@gmail.com" />
-                        <Label layoutX="263.0" layoutY="139.0" text="E-mail" />
-                        <Label layoutX="49.0" layoutY="56.0" text="Passageiro">
-                           <font>
-                              <Font name="System Bold" size="14.0" />
-                           </font>
-                        </Label>
-                        <DatePicker fx:id="btnNascimento" layoutX="49.0" layoutY="161.0" prefHeight="26.0" prefWidth="200.0" />
-                        <Label layoutX="49.0" layoutY="211.0" text="Pagamento">
-                           <font>
-                              <Font name="System Bold" size="14.0" />
-                           </font>
-                        </Label>
-                        <Button fx:id="btnPix" layoutX="49.0" layoutY="243.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="69.0">
-                           <graphic>
-                              <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../imgs/pix.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                        <Button fx:id="btnCartao" layoutX="129.0" layoutY="243.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="69.0">
-                           <graphic>
-                              <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../imgs/cartao.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                        <Button fx:id="btnTransferencia" layoutX="207.0" layoutY="243.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="69.0">
-                           <graphic>
-                              <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../imgs/bank.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                        <Button fx:id="btnConfirmar" layoutX="677.0" layoutY="504.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="117.0" stylesheets="@../css/fullpackstyling.css" text="Confirmar" />
-                        <ImageView fitHeight="171.0" fitWidth="147.0" layoutX="45.0" layoutY="365.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../imgs/qrcode.jpeg" />
-                           </image>
-                        </ImageView>
-                        <Label layoutX="70.0" layoutY="334.0" text="QRCODE PIX">
-                           <font>
-                              <Font name="System Bold" size="14.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </Pane>
                   <Pane fx:id="pnPagamento" prefHeight="200.0" prefWidth="200.0">
                      <children>
                         <Label layoutX="49.0" layoutY="13.0" text="Dados para pagamento">
@@ -331,19 +266,19 @@
                               <Font name="System Bold" size="24.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="btnNomeCompleto" layoutX="49.0" layoutY="100.0" prefHeight="31.0" prefWidth="203.0" promptText="Nome completo" />
-                        <TextField fx:id="btnCpf" layoutX="263.0" layoutY="100.0" prefHeight="31.0" prefWidth="203.0" promptText="CPF" />
+                        <TextField fx:id="txtNomeCompleto" layoutX="49.0" layoutY="100.0" prefHeight="31.0" prefWidth="203.0" promptText="Nome completo" />
+                        <TextField fx:id="txtCpf" layoutX="263.0" layoutY="100.0" prefHeight="31.0" prefWidth="203.0" promptText="CPF" />
                         <Label layoutX="49.0" layoutY="83.0" text="Nome Completo" />
                         <Label layoutX="263.0" layoutY="83.0" text="CPF" />
                         <Label layoutX="49.0" layoutY="139.0" text="Data de nascimento" />
-                        <TextField fx:id="btnEmail" layoutX="263.0" layoutY="158.0" prefHeight="31.0" prefWidth="203.0" promptText="matheusrabelo@gmail.com" />
+                        <TextField fx:id="txtEmail" layoutX="263.0" layoutY="158.0" prefHeight="31.0" prefWidth="203.0" promptText="matheusrabelo@gmail.com" />
                         <Label layoutX="263.0" layoutY="139.0" text="E-mail" />
                         <Label layoutX="49.0" layoutY="56.0" text="Passageiro">
                            <font>
                               <Font name="System Bold" size="14.0" />
                            </font>
                         </Label>
-                        <DatePicker fx:id="btnNascimento" layoutX="49.0" layoutY="161.0" prefHeight="26.0" prefWidth="200.0" />
+                        <DatePicker fx:id="txtNascimento" layoutX="49.0" layoutY="161.0" prefHeight="26.0" prefWidth="200.0" />
                         <Label layoutX="49.0" layoutY="211.0" text="Pagamento">
                            <font>
                               <Font name="System Bold" size="14.0" />
@@ -351,7 +286,7 @@
                         </Label>
                         <Button fx:id="btnPix" layoutX="49.0" layoutY="243.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="69.0">
                            <graphic>
-                              <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                              <ImageView fx:id="btnImagePix" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../imgs/pix.png" />
                                  </image>
@@ -375,6 +310,16 @@
                            </graphic>
                         </Button>
                         <Button fx:id="btnConfirmar" layoutX="677.0" layoutY="504.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="117.0" stylesheets="@../css/fullpackstyling.css" text="Confirmar" />
+                        <ImageView fitHeight="171.0" fitWidth="147.0" layoutX="76.0" layoutY="388.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../imgs/qrcode.jpeg" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="108.0" layoutY="360.0" text="QRCODE PIX">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
                      </children>
                   </Pane>
                </children>
