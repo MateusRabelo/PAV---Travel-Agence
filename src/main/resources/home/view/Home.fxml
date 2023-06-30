@@ -17,7 +17,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane cacheShape="false" centerShape="false" prefHeight="618.0" prefWidth="1076.0" scaleShape="false" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.controllers.Controller">
+<AnchorPane cacheShape="false" centerShape="false" prefHeight="618.0" prefWidth="1076.0" scaleShape="false" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.controllers.Controller">
    <children>
       <BorderPane prefHeight="618.0" prefWidth="908.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <left>
@@ -55,7 +55,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button fx:id="btnMinhasPassagens" alignment="BASELINE_LEFT" disable="true" graphicTextGap="10.0" layoutX="10.0" layoutY="65.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="55.0" prefWidth="230.0" stylesheets="@../css/fullpackstyling.css" text="Minhas Passagens" textFill="WHITE">
+                  <Button fx:id="btnMinhasPassagens" alignment="BASELINE_LEFT" graphicTextGap="10.0" layoutX="10.0" layoutY="65.0" mnemonicParsing="false" onAction="#handleClicks" prefHeight="55.0" prefWidth="230.0" stylesheets="@../css/fullpackstyling.css" text="Minhas Passagens" textFill="WHITE">
                      <graphic>
                         <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -260,7 +260,7 @@
                               <Font size="15.0" />
                            </font>
                         </Label>
-                        <Label layoutX="569.0" layoutY="516.0" text="614.147.283-44">
+                        <Label layoutX="582.0" layoutY="536.0" text="614.147.283-44">
                            <graphic>
                               <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -272,19 +272,19 @@
                               <Font size="24.0" />
                            </font>
                         </Label>
-                        <Label layoutX="644.0" layoutY="308.0" text="Apoie:">
+                        <Label layoutX="649.0" layoutY="323.0" text="Apoie:">
                            <font>
                               <Font name="System Bold" size="24.0" />
                            </font>
                         </Label>
-                        <ImageView fitHeight="165.0" fitWidth="200.0" layoutX="600.0" layoutY="340.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="165.0" fitWidth="200.0" layoutX="605.0" layoutY="363.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../imgs/qrcode.jpeg" />
                            </image>
                         </ImageView>
                      </children>
                   </Pane>
-                  <Pane fx:id="pnWelcome" prefHeight="618.0" prefWidth="756.0">
+                  <Pane fx:id="pnWelcome" opacity="0.0" prefHeight="618.0" prefWidth="756.0">
                      <children>
                         <ImageView fitHeight="618.0" fitWidth="917.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true">
                            <image>
