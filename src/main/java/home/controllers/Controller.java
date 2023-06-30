@@ -1,10 +1,12 @@
 package home.controllers;
 
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 
@@ -14,13 +16,16 @@ import java.util.ResourceBundle;
 public class Controller implements Initializable {
 
     @FXML
-    private Button btnSobre;
+    private Button btnBuscar1;
 
     @FXML
-    private Button btnBuscar;
+    private Button btnBuscarPromo;
 
     @FXML
     private Button btnInicio;
+
+    @FXML
+    private Button btnLogin;
 
     @FXML
     private Button btnMinhasPassagens;
@@ -29,13 +34,22 @@ public class Controller implements Initializable {
     private Button btnPromocoes;
 
     @FXML
+    private Button btnSobre;
+
+    @FXML
     private Button btnUsuario;
 
     @FXML
-    private Pane pnWelcome;
+    private Pane pnHome;
 
     @FXML
-    private Pane pnHome;
+    private Pane pnLogado;
+
+    @FXML
+    private Pane pnMinhasPassagens;
+
+    @FXML
+    private Pane pnPagamento;
 
     @FXML
     private Pane pnPromocionais;
@@ -47,25 +61,37 @@ public class Controller implements Initializable {
     private Pane pnUsuario;
 
     @FXML
-    private Pane pnMinhasPassagens;
+    private Pane pnWelcome;
 
     @FXML
-    private Pane pnLogado;
+    private TextField txtCidadeDestino1;
 
     @FXML
-    private Pane pnPagamento;
+    private TextField txtCidadeDestinoPromo;
 
     @FXML
-    private TextField txtCidadeDestino;
+    private TextField txtCidadeOrigem1;
 
     @FXML
-    private TextField txtCidadeOrigem;
+    private TextField txtCidadeOrigemPromo;
 
     @FXML
-    private DatePicker txtDiaIda;
+    private DatePicker txtDiaIda1;
 
     @FXML
-    private DatePicker txtDiaRetorno;
+    private DatePicker txtDiaIdaPromo;
+
+    @FXML
+    private DatePicker txtDiaRetorno1;
+
+    @FXML
+    private DatePicker txtDiaRetornoPromo;
+
+    @FXML
+    private PasswordField txtSenha;
+
+    @FXML
+    private TextField txtUsuario;
 
 
 
