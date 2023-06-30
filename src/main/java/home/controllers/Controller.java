@@ -72,7 +72,7 @@ public class Controller implements Initializable {
     @FXML
     private void handleClicks(ActionEvent event)
     {
-        pnWelcome.setOpacity(0);
+        pnWelcome .setOpacity(0);
 
         if (event.getSource() == btnUsuario)
         {
@@ -135,4 +135,6 @@ public class Controller implements Initializable {
         pnSobre.setOpacity(0);
         pnHome.setOpacity(0);
     }
+
+
 }
