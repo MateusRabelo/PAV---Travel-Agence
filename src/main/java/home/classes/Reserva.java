@@ -22,9 +22,13 @@ import home.controllers.*;
 
 import java.util.Date;
 
-public class Reserva {
+public class Reserva extends Passagem{
         private String passageiro, cpfPassageiro, informarcoesAdicionais;
         private Date dataDaReserva;
+
+        public Reserva(int id, String horario, int vagas, double preco, String dataIda, String dataRetorno, String destino, int poltrona, int oferta) {
+                super(id, horario, vagas, preco, dataIda, dataRetorno, destino, poltrona, oferta);
+        }
 
         public String getPassageiro()
         {
