@@ -1,13 +1,16 @@
 package home.controllers;
+
 import home.classes.*;
 
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
-import javafx.scene.text.Text;
+import javafx.scene.control.cell.PropertyValueFactory;
+
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -91,6 +94,21 @@ public class Controller implements Initializable {
 
     @FXML
     private Pane pnWelcome;
+
+    @FXML
+    private TableView<Passagem> tbvPassagensHome;
+
+    @FXML
+    private TableColumn<Passagem, Integer> colId;
+
+    @FXML
+    private TableColumn<Passagem, String> colHorario;
+
+    @FXML
+    private TableColumn<Passagem, Integer> colVagas;
+
+    @FXML
+    private TableColumn<Passagem, Double> colPreco;
 
     @FXML
     private TextField txtCidadeDestino1;
@@ -226,6 +244,19 @@ public class Controller implements Initializable {
     // region of Pane "Usuario"
 
     // region of Pane "Inicio"
+
+    @FXML
+    public void handleGerarPassagens()
+    {
+        colId.setCellValueFactory(new PropertyValueFactory<>("id"));
+        colHorario.setCellValueFactory(new PropertyValueFactory<>("horario"));
+        colVagas.setCellValueFactory(new PropertyValueFactory<>("vagas"));
+        colPreco.setCellValueFactory(new PropertyValueFactory<>("preco"));
+
+        ObservableList<Passagem> passagens = Passagem.gerarPassagensFicticias();
+
+        tbvPassagensHome.setItems(passagens);
+    }
 
     // region of Pane "Promocionais"
 
