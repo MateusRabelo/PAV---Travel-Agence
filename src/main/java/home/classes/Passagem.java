@@ -1,6 +1,9 @@
 package home.classes;
 import home.controllers.*;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 public class Passagem {
     private int id;
     private String horario;
@@ -111,6 +114,20 @@ public class Passagem {
         this.horario = horario;
         this.vagas = vagas;
         this.preco = preco;
+    }
+
+        public static ObservableList<Passagem> gerarPassagensFicticias()
+    {
+        ObservableList<Passagem> passagens = FXCollections.observableArrayList();
+
+        // Gerar passagens fictícias
+        passagens.add(new Passagem(1, "09:00", 5, 100.00));
+        passagens.add(new Passagem(2, "11:30", 8, 120.50));
+        passagens.add(new Passagem(3, "14:15", 3, 95.75));
+        passagens.add(new Passagem(4, "16:45", 10, 110.00));
+        passagens.add(new Passagem(5, "19:30", 2, 150.25));
+
+        return passagens;
     }
 }
 
