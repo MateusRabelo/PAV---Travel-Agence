@@ -15,7 +15,6 @@ Este repositório contém o trabalho de POO da Universidade Federal do Ceará, u
 
 ## Instalação Necessária para Rodar
 
-- JavaFx.
 - Java.
 - e alguma IDE, recomendamos Intellij.
 
