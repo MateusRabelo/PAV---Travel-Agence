@@ -8,4 +8,6 @@ module com.example.gui4 {
     exports home;
     exports home.controllers;
     opens home.controllers to javafx.fxml;
+    opens home.classes to javafx.base;
+
 }
