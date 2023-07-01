@@ -87,6 +87,12 @@ public class Controller implements Initializable {
     private  Label lblCodigoSeguranca;
 
     @FXML
+    private Label lblCpfPagamentoStatus;
+
+    @FXML
+    private Label lblNumeroCartaoStatus;
+
+    @FXML
     private Pane pnHome;
 
     @FXML
@@ -394,6 +400,27 @@ public class Controller implements Initializable {
     // region of Pane "Sobre"
 
     // region of Pane "Pagamento"
+    @FXML
+    private void handleConfirmarClick(ActionEvent event)
+    {
+        if(Pagamento.verificarPagamento(txtNumeroCartao, txtCpf))
+        {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Pagamento Realizado");
+            alert.setHeaderText(null);
+            alert.setContentText("O pagamento foi realizado com sucesso!");
+
+            alert.showAndWait();
+
+            // acrescentar lógica para if verificarPagammento is true, então adicionar na seção de Minhas passagens
+        }
+        else
+        {
+            lblCpfPagamentoStatus.setText("Cpf inválido!");
+            lblNumeroCartaoStatus.setText("Numero do cartão inválido!");
+
+        }
+    }
 
     @FXML
     public void handlePixClick(ActionEvent event)
