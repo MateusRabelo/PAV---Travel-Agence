@@ -116,28 +116,6 @@
                         </ImageView>
                      </children>
                   </Pane>
-                  <Pane fx:id="pnHome" opacity="0.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffffff;">
-                     <children>
-                        <TextField fx:id="txtCidadeOrigemPromo" layoutX="116.0" layoutY="70.0" prefHeight="29.0" prefWidth="139.0" promptText="Origem" stylesheets="@../css/fullpackstyling.css" />
-                        <TextField fx:id="txtCidadeDestinoPromo" layoutX="263.0" layoutY="69.0" prefHeight="29.0" prefWidth="139.0" promptText="Destino" stylesheets="@../css/fullpackstyling.css" />
-                        <DatePicker fx:id="txtDiaIdaPromo" layoutX="409.0" layoutY="69.0" prefHeight="29.0" prefWidth="139.0" promptText="Ida" />
-                        <DatePicker fx:id="txtDiaRetornoPromo" layoutX="554.0" layoutY="69.0" prefHeight="29.0" prefWidth="139.0" promptText="Retorno" />
-                        <Button fx:id="btnBuscarPromo" layoutX="707.0" layoutY="69.0" mnemonicParsing="false" prefHeight="29.0" stylesheets="@../css/fullpackstyling.css" text="Buscar" />
-                        <TableView layoutX="31.0" layoutY="125.0" prefHeight="459.0" prefWidth="824.0" stylesheets="@../css/fullpackstyling.css">
-                           <columns>
-                              <TableColumn prefWidth="81.0" text="ID" />
-                              <TableColumn prefWidth="123.0" text="HORARIO" />
-                              <TableColumn prefWidth="124.0" text="VAGAS" />
-                              <TableColumn prefWidth="182.0" text="PREÇO" />
-                           </columns>
-                        </TableView>
-                        <Label layoutX="209.0" layoutY="25.0" text="Procure seu proximo destino!">
-                           <font>
-                              <Font name="DejaVu Sans Bold" size="28.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </Pane>
                   <Pane fx:id="pnSobre" opacity="0.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffffff;">
                      <children>
                         <Label layoutX="49.0" layoutY="91.0" text="Sobre">
@@ -320,6 +298,28 @@
                            </image>
                         </ImageView>
                         <Label fx:id="lblUsuarioStatus" layoutX="366.0" layoutY="226.0" prefHeight="22.0" prefWidth="161.0" textFill="#e80e0eab" />
+                     </children>
+                  </Pane>
+                  <Pane fx:id="pnHome" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffffff;">
+                     <children>
+                        <Button fx:id="btnBuscarPromo" layoutX="707.0" layoutY="69.0" mnemonicParsing="false" onAction="#handleGerarPassagens" prefHeight="29.0" stylesheets="@../css/fullpackstyling.css" text="Buscar" />
+                        <TableView fx:id="tbvPassagensHome" layoutX="31.0" layoutY="125.0" prefHeight="459.0" prefWidth="824.0" stylesheets="@../css/fullpackstyling.css">
+                           <columns>
+                              <TableColumn fx:id="colId" prefWidth="81.0" text="ID" />
+                              <TableColumn fx:id="colHorario" prefWidth="123.0" text="HORARIO" />
+                              <TableColumn fx:id="colVagas" prefWidth="124.0" text="VAGAS" />
+                              <TableColumn fx:id="colPreco" prefWidth="182.0" text="PREÇO" />
+                           </columns>
+                        </TableView>
+                        <TextField fx:id="txtCidadeOrigemPromo" layoutX="116.0" layoutY="70.0" prefHeight="29.0" prefWidth="139.0" promptText="Origem" stylesheets="@../css/fullpackstyling.css" />
+                        <TextField fx:id="txtCidadeDestinoPromo" layoutX="263.0" layoutY="69.0" prefHeight="29.0" prefWidth="139.0" promptText="Destino" stylesheets="@../css/fullpackstyling.css" />
+                        <DatePicker fx:id="txtDiaIdaPromo" layoutX="409.0" layoutY="69.0" prefHeight="29.0" prefWidth="139.0" promptText="Ida" />
+                        <DatePicker fx:id="txtDiaRetornoPromo" layoutX="554.0" layoutY="69.0" prefHeight="29.0" prefWidth="139.0" promptText="Retorno" />
+                        <Label layoutX="209.0" layoutY="25.0" text="Procure seu proximo destino!">
+                           <font>
+                              <Font name="DejaVu Sans Bold" size="28.0" />
+                           </font>
+                        </Label>
                      </children>
                   </Pane>
                </children>
