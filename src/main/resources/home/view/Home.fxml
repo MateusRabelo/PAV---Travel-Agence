@@ -246,28 +246,6 @@
                         <Label fx:id="lblUsuarioStatus" layoutX="366.0" layoutY="226.0" prefHeight="22.0" prefWidth="161.0" textFill="#e80e0eab" />
                      </children>
                   </Pane>
-                  <Pane fx:id="pnHome" opacity="0.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffffff;">
-                     <children>
-                        <Button fx:id="btnBuscarHome" layoutX="707.0" layoutY="69.0" mnemonicParsing="false" onAction="#handleGerarPassagensHome" prefHeight="29.0" stylesheets="@../css/fullpackstyling.css" text="Buscar" />
-                        <TableView fx:id="tbvPassagensHome" layoutX="31.0" layoutY="125.0" prefHeight="459.0" prefWidth="824.0" stylesheets="@../css/fullpackstyling.css">
-                           <columns>
-                              <TableColumn fx:id="colIdHome" prefWidth="81.0" text="ID" />
-                              <TableColumn fx:id="colHorarioHome" prefWidth="123.0" text="HORARIO" />
-                              <TableColumn fx:id="colVagasHome" prefWidth="124.0" text="VAGAS" />
-                              <TableColumn fx:id="colPrecoHome" prefWidth="182.0" text="PREÇO" />
-                           </columns>
-                        </TableView>
-                        <TextField fx:id="txtCidadeOrigemPromo" layoutX="116.0" layoutY="70.0" prefHeight="29.0" prefWidth="139.0" promptText="Origem" stylesheets="@../css/fullpackstyling.css" />
-                        <TextField fx:id="txtCidadeDestinoPromo" layoutX="263.0" layoutY="69.0" prefHeight="29.0" prefWidth="139.0" promptText="Destino" stylesheets="@../css/fullpackstyling.css" />
-                        <DatePicker fx:id="txtDiaIdaPromo" layoutX="409.0" layoutY="69.0" prefHeight="29.0" prefWidth="139.0" promptText="Ida" />
-                        <DatePicker fx:id="txtDiaRetornoPromo" layoutX="554.0" layoutY="69.0" prefHeight="29.0" prefWidth="139.0" promptText="Retorno" />
-                        <Label layoutX="209.0" layoutY="25.0" text="Procure seu proximo destino!">
-                           <font>
-                              <Font name="DejaVu Sans Bold" size="28.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </Pane>
                   <Pane fx:id="pnMinhasPassagens" layoutX="10.0" layoutY="10.0" opacity="0.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffffff;">
                      <children>
                         <TableView layoutX="20.0" layoutY="70.0" prefHeight="519.0" prefWidth="847.0" stylesheets="@../css/fullpackstyling.css">
@@ -299,7 +277,7 @@
                         <DatePicker fx:id="txtDiaIda1" layoutX="412.0" layoutY="73.0" prefHeight="29.0" prefWidth="139.0" promptText="Ida" />
                         <DatePicker fx:id="txtDiaRetorno1" layoutX="557.0" layoutY="73.0" prefHeight="29.0" prefWidth="139.0" promptText="Retorno" />
                         <Button fx:id="btnBuscarPromo" layoutX="710.0" layoutY="73.0" mnemonicParsing="false" onAction="#handleGerarPassagensPromo" prefHeight="29.0" stylesheets="@../css/fullpackstyling.css" text="Buscar" />
-                        <TableView fx:id="tbvPassagensPromo" layoutX="31.0" layoutY="125.0" prefHeight="459.0" prefWidth="828.0" stylesheets="@../css/fullpackstyling.css">
+                        <TableView fx:id="tbvPassagensPromo" layoutX="31.0" layoutY="125.0" prefHeight="407.0" prefWidth="828.0" stylesheets="@../css/fullpackstyling.css">
                            <columns>
                               <TableColumn fx:id="colIdPromo" prefWidth="81.0" text="ID" />
                               <TableColumn fx:id="colDestinoPromo" prefWidth="120.0" text="DESTINO" />
@@ -320,6 +298,38 @@
                               <Image url="@../imgs/IconPromo.png" />
                            </image>
                         </ImageView>
+                        <Button fx:id="btnComprarPassagem" layoutX="283.0" layoutY="544.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="323.0" stylesheets="@../css/fullpackstyling.css" text="Fazer Reserva">
+                           <font>
+                              <Font name="System Bold" size="28.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="pnHome" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffffff;">
+                     <children>
+                        <Button fx:id="btnBuscarHome" layoutX="707.0" layoutY="69.0" mnemonicParsing="false" onAction="#handleGerarPassagensHome" prefHeight="29.0" stylesheets="@../css/fullpackstyling.css" text="Buscar" />
+                        <TableView fx:id="tbvPassagensHome" layoutX="31.0" layoutY="125.0" prefHeight="406.0" prefWidth="824.0" stylesheets="@../css/fullpackstyling.css">
+                           <columns>
+                              <TableColumn fx:id="colIdHome" prefWidth="81.0" text="ID" />
+                              <TableColumn fx:id="colHorarioHome" prefWidth="123.0" text="HORARIO" />
+                              <TableColumn fx:id="colVagasHome" prefWidth="124.0" text="VAGAS" />
+                              <TableColumn fx:id="colPrecoHome" prefWidth="182.0" text="PREÇO" />
+                           </columns>
+                        </TableView>
+                        <TextField fx:id="txtCidadeOrigemPromo" layoutX="116.0" layoutY="70.0" prefHeight="29.0" prefWidth="139.0" promptText="Origem" stylesheets="@../css/fullpackstyling.css" />
+                        <TextField fx:id="txtCidadeDestinoPromo" layoutX="263.0" layoutY="69.0" prefHeight="29.0" prefWidth="139.0" promptText="Destino" stylesheets="@../css/fullpackstyling.css" />
+                        <DatePicker fx:id="txtDiaIdaPromo" layoutX="409.0" layoutY="69.0" prefHeight="29.0" prefWidth="139.0" promptText="Ida" />
+                        <DatePicker fx:id="txtDiaRetornoPromo" layoutX="554.0" layoutY="69.0" prefHeight="29.0" prefWidth="139.0" promptText="Retorno" />
+                        <Label layoutX="209.0" layoutY="25.0" text="Procure seu proximo destino!">
+                           <font>
+                              <Font name="DejaVu Sans Bold" size="28.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="btnComprarPassagem1" layoutX="282.0" layoutY="544.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="323.0" stylesheets="@../css/fullpackstyling.css" text="Fazer Reserva">
+                           <font>
+                              <Font name="System Bold" size="28.0" />
+                           </font>
+                        </Button>
                      </children>
                   </Pane>
                </children>
