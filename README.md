@@ -4,7 +4,7 @@
 Este repositório contém o trabalho de POO da Universidade Federal do Ceará, um sistema de agência de viagem desenvolvido em java usando a GUI JavaFX por alunos da turma de POO.
 ## Equipe
 
-- [Alvaro Santos](https://www.github.com/contrasov)
+- [Alvaro Santos](https://www.github.com/contrasov) 
 - [Matheus Rabelo](https://github.com/MateusRabelo)
 
 
@@ -19,7 +19,9 @@ Este repositório contém o trabalho de POO da Universidade Federal do Ceará, u
 - Java.
 - e alguma IDE, recomendamos Intellij.
 
-
+![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
+![Alvaro](https://img.shields.io/badge/Alvaro-FCC624?style=for-the-badge&)
+![Matheus](https://img.shields.io/badge/Matheus-167C80?style=for-the-badge&)
 
 
 
