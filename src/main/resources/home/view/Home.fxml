@@ -298,7 +298,7 @@
                               <Image url="@../imgs/IconPromo.png" />
                            </image>
                         </ImageView>
-                        <Button fx:id="btnComprarPassagem" layoutX="283.0" layoutY="544.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="323.0" stylesheets="@../css/fullpackstyling.css" text="Fazer Reserva">
+                        <Button fx:id="btnComprarPassagemPromo" layoutX="283.0" layoutY="544.0" mnemonicParsing="false" onAction="#handlePagamento" prefHeight="51.0" prefWidth="323.0" stylesheets="@../css/fullpackstyling.css" text="Fazer Reserva">
                            <font>
                               <Font name="System Bold" size="28.0" />
                            </font>
@@ -325,7 +325,7 @@
                               <Font name="DejaVu Sans Bold" size="28.0" />
                            </font>
                         </Label>
-                        <Button fx:id="btnComprarPassagem1" layoutX="282.0" layoutY="544.0" mnemonicParsing="false" prefHeight="51.0" prefWidth="323.0" stylesheets="@../css/fullpackstyling.css" text="Fazer Reserva">
+                        <Button fx:id="btnComprarPassagemHome" layoutX="282.0" layoutY="544.0" mnemonicParsing="false" onAction="#handlePagamento" prefHeight="51.0" prefWidth="323.0" stylesheets="@../css/fullpackstyling.css" text="Fazer Reserva">
                            <font>
                               <Font name="System Bold" size="28.0" />
                            </font>

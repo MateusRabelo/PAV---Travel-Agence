@@ -12,7 +12,7 @@
 //+ setPagador(Usuario pagador) : void"
 
 package home.classes;
-import home.controllers.*;
+
 
 public class Pagamento {
     private double valor;

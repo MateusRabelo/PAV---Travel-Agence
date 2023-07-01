@@ -246,6 +246,20 @@ public class Controller implements Initializable {
 
     }
 
+    @FXML
+    private void handlePagamento(ActionEvent event)
+    {
+        pnPagamento.toFront();
+
+        pnPagamento.setOpacity(1);
+        pnUsuario.setOpacity(0);
+        pnPromocionais.setOpacity(0);
+        pnMinhasPassagens.setOpacity(0);
+        pnLogado.setOpacity(0);
+        pnSobre.setOpacity(0);
+        pnHome.setOpacity(0);
+    }
+
     // region of Pane "Logado"
 
     @FXML
@@ -324,7 +338,7 @@ public class Controller implements Initializable {
             }
         });
 
-        
+
     }
 
 
