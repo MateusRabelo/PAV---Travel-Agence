@@ -78,6 +78,15 @@ public class Controller implements Initializable {
     private Label lblUsuarioStatus;
 
     @FXML
+    private  Label lblNumeroCartao;
+
+    @FXML
+    private  Label lblNomeCartao;
+
+    @FXML
+    private  Label lblCodigoSeguranca;
+
+    @FXML
     private Pane pnHome;
 
     @FXML
@@ -193,6 +202,15 @@ public class Controller implements Initializable {
 
     @FXML
     private TextField txtNomeCompleto;
+
+    @FXML
+    private TextField txtNumeroCartao;
+
+    @FXML
+    private TextField txtNomeCartao;
+
+    @FXML
+    private TextField txtCodigoSeguranca;
 
     @FXML
     private PasswordField txtSenha;
@@ -374,6 +392,56 @@ public class Controller implements Initializable {
     // region of Pane "Minhas Passagens"
 
     // region of Pane "Sobre"
+
+    // region of Pane "Pagamento"
+
+    @FXML
+    public void handlePixClick(ActionEvent event)
+    {
+        lblPixStatus.setDisable(false);
+        lblPixStatus.setOpacity(1);
+
+        imgQrcode.setDisable(false);
+        imgQrcode.setOpacity(1);
+
+        lblCodigoSeguranca.setDisable(true);
+        lblNomeCartao.setDisable(true);
+        lblNumeroCartao.setDisable(true);
+        lblCodigoSeguranca.setOpacity(0);
+        lblNomeCartao.setOpacity(0);
+        lblNumeroCartao.setOpacity(0);
+
+        txtNumeroCartao.setDisable(true);
+        txtNomeCartao.setDisable(true);
+        txtCodigoSeguranca.setDisable(true);
+        txtNumeroCartao.setOpacity(0);
+        txtNomeCartao.setOpacity(0);
+        txtCodigoSeguranca.setOpacity(0);
+    }
+
+    @FXML
+    public void handleCartaoClick(ActionEvent event)
+    {
+        lblPixStatus.setDisable(true);
+        lblPixStatus.setOpacity(0);
+
+        imgQrcode.setDisable(true);
+        imgQrcode.setOpacity(0);
+
+        lblCodigoSeguranca.setDisable(false);
+        lblNomeCartao.setDisable(false);
+        lblNumeroCartao.setDisable(false);
+        lblCodigoSeguranca.setOpacity(1);
+        lblNomeCartao.setOpacity(1);
+        lblNumeroCartao.setOpacity(1);
+
+        txtNumeroCartao.setDisable(false);
+        txtNomeCartao.setDisable(false);
+        txtCodigoSeguranca.setDisable(false);
+        txtNumeroCartao.setOpacity(1);
+        txtNomeCartao.setOpacity(1);
+        txtCodigoSeguranca.setOpacity(1);
+    }
 
     // to certificate than all initializing correctly
     @Override
