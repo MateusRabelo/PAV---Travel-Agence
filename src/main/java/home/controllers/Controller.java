@@ -18,7 +18,7 @@ import java.util.ResourceBundle;
 public class Controller implements Initializable {
 
     @FXML
-    private Button btnBuscar1;
+    private Button btnBuscarHome;
 
     @FXML
     private Button btnBuscarPromo;
@@ -99,16 +99,58 @@ public class Controller implements Initializable {
     private TableView<Passagem> tbvPassagensHome;
 
     @FXML
-    private TableColumn<Passagem, Integer> colId;
+    private TableView<Passagem> tbvPassagensPromo;
 
     @FXML
-    private TableColumn<Passagem, String> colHorario;
+    private TableColumn<Passagem, Integer> colIdHome;
 
     @FXML
-    private TableColumn<Passagem, Integer> colVagas;
+    private TableColumn<Passagem, String> colHorarioHome;
 
     @FXML
-    private TableColumn<Passagem, Double> colPreco;
+    private TableColumn<Passagem, Integer> colVagasHome;
+
+    @FXML
+    private TableColumn<Passagem, Double> colPrecoHome;
+
+    @FXML
+    private TableColumn<Passagem, String> colDataIdaMeu;
+
+    @FXML
+    private TableColumn<Passagem, String> colDataIdaPromo;
+
+    @FXML
+    private TableColumn<Passagem, String> colDataRetornoMeu;
+
+    @FXML
+    private TableColumn<Passagem, String> colDataRetornoPromo;
+
+    @FXML
+    private TableColumn<Passagem, String> colDestinoMeu;
+
+    @FXML
+    private TableColumn<Passagem, String> colDestinoPromo;
+
+    @FXML
+    private TableColumn<Passagem, String> colHorarioMeu;
+
+    @FXML
+    private TableColumn<Passagem, String> colHorarioPromo;
+
+    @FXML
+    private TableColumn<Passagem, Integer> colIdMeu;
+
+    @FXML
+    private TableColumn<Passagem, Integer> colIdPromo;
+
+    @FXML
+    private TableColumn<Passagem, Integer> colOfertaPromo;
+
+    @FXML
+    private TableColumn<Passagem, Integer> colPoltronaMeu;
+
+    @FXML
+    private TableColumn<Passagem, Integer> colVagasPromo;
 
     @FXML
     private TextField txtCidadeDestino1;
@@ -198,8 +240,6 @@ public class Controller implements Initializable {
 
     }
 
-
-
     // region of Pane "Logado"
 
     @FXML
@@ -246,16 +286,31 @@ public class Controller implements Initializable {
     // region of Pane "Inicio"
 
     @FXML
-    public void handleGerarPassagens()
+    public void handleGerarPassagensHome()
     {
-        colId.setCellValueFactory(new PropertyValueFactory<>("id"));
-        colHorario.setCellValueFactory(new PropertyValueFactory<>("horario"));
-        colVagas.setCellValueFactory(new PropertyValueFactory<>("vagas"));
-        colPreco.setCellValueFactory(new PropertyValueFactory<>("preco"));
+            colIdHome.setCellValueFactory(new PropertyValueFactory<>("id"));
+            colHorarioHome.setCellValueFactory(new PropertyValueFactory<>("horario"));
+            colVagasHome.setCellValueFactory(new PropertyValueFactory<>("vagas"));
+            colPrecoHome.setCellValueFactory(new PropertyValueFactory<>("preco"));
 
         ObservableList<Passagem> passagens = Passagem.gerarPassagensFicticias();
 
         tbvPassagensHome.setItems(passagens);
+    }
+
+    public void handleGerarPassagensPromo()
+    {
+        colIdPromo.setCellValueFactory(new PropertyValueFactory<>("id"));
+        colDestinoPromo.setCellValueFactory(new PropertyValueFactory<>("destino"));
+        colHorarioPromo.setCellValueFactory(new PropertyValueFactory<>("horario"));
+        colVagasPromo.setCellValueFactory(new PropertyValueFactory<>("vagas"));
+        colOfertaPromo.setCellValueFactory(new PropertyValueFactory<>("oferta"));
+        colDataIdaPromo.setCellValueFactory(new PropertyValueFactory<>("dataIda"));
+        colDataRetornoPromo.setCellValueFactory(new PropertyValueFactory<>("dataRetorno"));
+
+        ObservableList<Passagem> passagens = Passagem.gerarPassagensFicticias();
+
+        tbvPassagensPromo.setItems(passagens);
     }
 
     // region of Pane "Promocionais"
@@ -263,11 +318,6 @@ public class Controller implements Initializable {
     // region of Pane "Minhas Passagens"
 
     // region of Pane "Sobre"
-
-
-
-
-
 
     // to certificate than all initializing correctly
     @Override
