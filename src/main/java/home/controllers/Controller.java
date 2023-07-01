@@ -296,6 +296,27 @@ public class Controller implements Initializable {
         ObservableList<Passagem> passagens = Passagem.gerarPassagensFicticias();
 
         tbvPassagensHome.setItems(passagens);
+
+
+        // permite selecionar na lista
+//        tbvPassagensHome.setOnMouseClicked(event -> {
+//            Passagem passagemSelecionada = tbvPassagensHome.getSelectionModel().getSelectedItem();
+//            if (passagemSelecionada != null) {
+//                // Faça algo com a passagem selecionada
+//                System.out.println("Passagem selecionada: " + passagemSelecionada.getId());
+//            }
+//        });
+
+        tbvPassagensHome.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+        tbvPassagensHome.setOnMouseClicked(event -> {
+            ObservableList<Passagem> passagensSelecionadas = tbvPassagensHome.getSelectionModel().getSelectedItems();
+            if (!passagensSelecionadas.isEmpty()) {
+                // Faça algo com as passagens selecionadas
+                for (Passagem passagem : passagensSelecionadas) {
+                    System.out.println("Passagem selecionada: " + passagem.getId());
+                }
+            }
+        });
     }
 
     public void handleGerarPassagensPromo()
