@@ -63,6 +63,12 @@ public class Controller implements Initializable {
     private Button btnUsuario;
 
     @FXML
+    private Button btnComprarPassagemPromo;
+
+    @FXML
+    private Button btnComprarPassagemHome;
+
+    @FXML
     private ImageView imgQrcode;
 
     @FXML
@@ -317,7 +323,13 @@ public class Controller implements Initializable {
                 }
             }
         });
+
+        
     }
+
+
+
+    // region of Pane "Promocionais"
 
     public void handleGerarPassagensPromo()
     {
@@ -332,9 +344,18 @@ public class Controller implements Initializable {
         ObservableList<Passagem> passagens = Passagem.gerarPassagensFicticias();
 
         tbvPassagensPromo.setItems(passagens);
-    }
 
-    // region of Pane "Promocionais"
+        tbvPassagensHome.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+        tbvPassagensHome.setOnMouseClicked(event -> {
+            ObservableList<Passagem> passagensSelecionadas = tbvPassagensHome.getSelectionModel().getSelectedItems();
+            if (!passagensSelecionadas.isEmpty()) {
+                // Faça algo com as passagens selecionadas
+                for (Passagem passagem : passagensSelecionadas) {
+                    System.out.println("Passagem selecionada: " + passagem.getId());
+                }
+            }
+        });
+    }
 
     // region of Pane "Minhas Passagens"
 
