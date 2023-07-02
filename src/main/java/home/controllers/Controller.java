@@ -174,6 +174,15 @@ public class Controller implements Initializable {
     private TableColumn<Passagem, Integer> colVagasPromo;
 
     @FXML
+    private TableColumn<Passagem, String> colDestinoHome;
+
+    @FXML
+    private TableColumn<Passagem, String> colDataIdaHome;
+
+    @FXML
+    private TableColumn<Passagem, String> colDataRetornoHome;
+
+    @FXML
     private TextField txtCidadeDestino1;
 
     @FXML
@@ -343,10 +352,13 @@ public class Controller implements Initializable {
     @FXML
     public void handleGerarPassagensHome()
     {
-            colIdHome.setCellValueFactory(new PropertyValueFactory<>("id"));
-            colHorarioHome.setCellValueFactory(new PropertyValueFactory<>("horario"));
-            colVagasHome.setCellValueFactory(new PropertyValueFactory<>("vagas"));
-            colPrecoHome.setCellValueFactory(new PropertyValueFactory<>("preco"));
+        colIdHome.setCellValueFactory(new PropertyValueFactory<>("id"));
+        colDestinoHome.setCellValueFactory(new PropertyValueFactory<>("destino"));
+        colHorarioHome.setCellValueFactory(new PropertyValueFactory<>("horario"));
+        colVagasHome.setCellValueFactory(new PropertyValueFactory<>("vagas"));
+        colPrecoHome.setCellValueFactory(new PropertyValueFactory<>("preco"));
+        colDataIdaHome.setCellValueFactory(new PropertyValueFactory<>("dataIda"));
+        colDataRetornoHome.setCellValueFactory(new PropertyValueFactory<>("dataRetorno"));
 
         ObservableList<Passagem> passagens = Passagem.gerarPassagensFicticias();
 

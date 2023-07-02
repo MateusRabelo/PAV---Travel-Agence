@@ -12,7 +12,8 @@ public class Passagem {
     private String dataIda; //
     private String dataRetorno; //
     private int poltrona; //
-    private int oferta; //
+    private String oferta; //
+
 
 
 
@@ -96,19 +97,19 @@ public class Passagem {
         this.poltrona = poltrona;
     }
 
-    public int getOferta()
+    public String getOferta()
     {
         return oferta;
     }
 
-    public void setOferta(int oferta)
+    public void setOferta(String oferta)
     {
         this.oferta = oferta;
     }
 
 
-
-    public Passagem(int id, String horario, int vagas, double preco, String dataIda, String dataRetorno, String destino, int poltrona, int oferta) {
+    String[] cidades = {"Acre", "Alagoas", "Amapá", "Amazonas", "Bahia", "Ceará", "Distrito Federal", "Espírito Santo", "Goiás", "Maranhão", "Mato Grosso", "Mato Grosso do Sul", "Minas Gerais", "Pará", "Paraíba", "Paraná", "Pernambuco", "Piauí", "Rio de Janeiro", "Rio Grande do Norte", "Rio Grande do Sul", "Rondônia", "Roraima", "Santa Catarina", "São Paulo", "Sergipe", "Tocantins"};
+    public Passagem(int id, String horario, int vagas, double preco, String dataIda, String dataRetorno, String destino, int poltrona, String oferta) {
         this.id = id;
         this.horario = horario;
         this.vagas = vagas;
@@ -120,41 +121,42 @@ public class Passagem {
         this.oferta = oferta;
     }
 
+
         public static ObservableList<Passagem> gerarPassagensFicticias()
     {
         ObservableList<Passagem> passagens = FXCollections.observableArrayList();
 
         // Gerar passagens fictícias
-        passagens.add(new Passagem(1, "09:00", 5, 100.00, "01/07/2023", "02/07/2023", "Destino A", 1, 0));
-        passagens.add(new Passagem(2, "11:30", 8, 120.50, "03/07/2023", "04/07/2023", "Destino B", 2, 1));
-        passagens.add(new Passagem(3, "14:15", 3, 95.75, "05/07/2023", "06/07/2023", "Destino C", 3, 0));
-        passagens.add(new Passagem(4, "16:45", 10, 110.00, "07/07/2023", "08/07/2023", "Destino D", 4, 1));
-        passagens.add(new Passagem(5, "19:30", 2, 150.25, "09/07/2023", "10/07/2023", "Destino E", 5, 0));
-        passagens.add(new Passagem(6, "09:00", 5, 100.00, "11/07/2023", "12/07/2023", "Destino F", 6, 1));
-        passagens.add(new Passagem(7, "11:30", 8, 120.50, "13/07/2023", "14/07/2023", "Destino G", 7, 0));
-        passagens.add(new Passagem(8, "14:15", 3, 95.75, "15/07/2023", "16/07/2023", "Destino H", 8, 1));
-        passagens.add(new Passagem(9, "16:45", 10, 110.00, "17/07/2023", "18/07/2023", "Destino I", 9, 0));
-        passagens.add(new Passagem(10, "19:30", 2, 150.25, "19/07/2023", "20/07/2023", "Destino J", 10, 1));
-        passagens.add(new Passagem(11, "09:00", 5, 100.00, "21/07/2023", "22/07/2023", "Destino K", 11, 0));
-        passagens.add(new Passagem(12, "11:30", 8, 120.50, "23/07/2023", "24/07/2023", "Destino L", 12, 1));
-        passagens.add(new Passagem(13, "14:15", 3, 95.75, "25/07/2023", "26/07/2023", "Destino M", 13, 0));
-        passagens.add(new Passagem(14, "16:45", 10, 110.00, "27/07/2023", "28/07/2023", "Destino N", 14, 1));
-        passagens.add(new Passagem(15, "19:30", 2, 150.25, "29/07/2023", "30/07/2023", "Destino O", 15, 0));
-        passagens.add(new Passagem(16, "09:00", 5, 100.00, "31/07/2023", "01/08/2023", "Destino P", 16, 0));
-        passagens.add(new Passagem(17, "11:30", 8, 120.50, "02/08/2023", "03/08/2023", "Destino Q", 17, 1));
-        passagens.add(new Passagem(18, "14:15", 3, 95.75, "04/08/2023", "05/08/2023", "Destino R", 18, 0));
-        passagens.add(new Passagem(19, "16:45", 10, 110.00, "06/08/2023", "07/08/2023", "Destino S", 19, 1));
-        passagens.add(new Passagem(20, "19:30", 2, 150.25, "08/08/2023", "09/08/2023", "Destino T", 20, 0));
-        passagens.add(new Passagem(21, "09:00", 5, 100.00, "10/08/2023", "11/08/2023", "Destino U", 21, 1));
-        passagens.add(new Passagem(22, "11:30", 8, 120.50, "12/08/2023", "13/08/2023", "Destino V", 22, 0));
-        passagens.add(new Passagem(23, "14:15", 3, 95.75, "14/08/2023", "15/08/2023", "Destino W", 23, 1));
-        passagens.add(new Passagem(24, "16:45", 10, 110.00, "16/08/2023", "17/08/2023", "Destino X", 24, 0));
-        passagens.add(new Passagem(25, "19:30", 2, 150.25, "18/08/2023", "19/08/2023", "Destino Y", 25, 1));
-        passagens.add(new Passagem(26, "09:00", 5, 100.00, "20/08/2023", "21/08/2023", "Destino Z", 26, 0));
-        passagens.add(new Passagem(27, "11:30", 8, 120.50, "22/08/2023", "23/08/2023", "Destino AA", 27, 1));
-        passagens.add(new Passagem(28, "14:15", 3, 95.75, "24/08/2023", "25/08/2023", "Destino BB", 28, 0));
-        passagens.add(new Passagem(29, "16:45", 10, 110.00, "26/08/2023", "27/08/2023", "Destino CC", 29, 1));
-        passagens.add(new Passagem(30, "19:30", 2, 150.25, "28/08/2023", "29/08/2023", "Destino DD", 30, 0));
+        passagens.add(new Passagem(1235, "09:00", 5, 494.95, "01/07/2023", "02/07/2023", "São Paulo", 1, "30% OFF"));
+        passagens.add(new Passagem(2845, "11:30", 8, 798.99, "03/07/2023", "04/07/2023", "Rio de Janeiro", 2, "40% OFF"));
+        passagens.add(new Passagem(8365, "14:15", 3, 1569.99, "05/07/2023", "06/07/2023", "Belo Horizonte", 3, "20% OFF"));
+        passagens.add(new Passagem(2765, "16:45", 10, 1714.99, "07/07/2023", "08/07/2023", "Salvador", 4, "25% OFF"));
+        passagens.add(new Passagem(6087, "19:30", 2, 1455.99, "09/07/2023", "10/07/2023", "Fortaleza", 5, "15% OFF"));
+        passagens.add(new Passagem(1325, "09:00", 5, 1480.24, "11/07/2023", "12/07/2023", "Recife", 6, "35% OFF"));
+        passagens.add(new Passagem(265, "11:30", 8, 768.24, "13/07/2023", "14/07/2023", "Manaus", 7, "10% OFF"));
+        passagens.add(new Passagem(76, "14:15", 3, 1987.74, "15/07/2023", "16/07/2023", "Curitiba", 8, "30% OFF"));
+        passagens.add(new Passagem(2436, "16:45", 10, 1999.99, "17/07/2023", "18/07/2023", "Porto Alegre", 9, "50% OFF"));
+        passagens.add(new Passagem(175, "19:30", 2, 4156.69, "19/07/2023", "20/07/2023", "Brasília", 10, "25% OFF"));
+        passagens.add(new Passagem(198, "09:00", 5, 1627.29, "21/07/2023", "22/07/2023", "Vitória", 11, "15% OFF"));
+        passagens.add(new Passagem(1780, "11:30", 8, 1873.19, "23/07/2023", "24/07/2023", "Florianópolis", 12, "10% OFF"));
+        passagens.add(new Passagem(186, "14:15", 3, 1927.59, "25/07/2023", "26/07/2023", "Porto Seguro", 13, "30% OFF"));
+        passagens.add(new Passagem(1543, "16:45", 10, 1836.99, "27/07/2023", "28/07/2023", "Natal", 14, "20% OFF"));
+        passagens.add(new Passagem(1765, "19:30", 2, 1623.99, "29/07/2023", "30/07/2023", "Gramado", 15, "15% OFF"));
+        passagens.add(new Passagem(123, "09:00", 5, 1627.89, "31/07/2023", "01/08/2023", "Foz do Iguaçu", 16, "35% OFF"));
+        passagens.add(new Passagem(1524, "11:30", 8, 1636.99, "02/08/2023", "03/08/2023", "Porto Velho", 17, "10% OFF"));
+        passagens.add(new Passagem(1898, "14:15", 3, 1237.79, "04/08/2023", "05/08/2023", "Goiânia", 18, "30% OFF"));
+        passagens.add(new Passagem(167, "16:45", 10, 1723.99, "06/08/2023", "07/08/2023", "Belém", 19, "25% OFF"));
+        passagens.add(new Passagem(2523, "19:30", 2, 1090.89, "08/08/2023", "09/08/2023", "João Pessoa", 20, "15% OFF"));
+        passagens.add(new Passagem(2796, "09:00", 5, 3627.14, "10/08/2023", "11/08/2023", "Teresina", 21, "35% OFF"));
+        passagens.add(new Passagem(2253, "11:30", 8, 1738.89, "12/08/2023", "13/08/2023", "Campo Grande", 22, "10% OFF"));
+        passagens.add(new Passagem(2386, "14:15", 3, 1237.79, "14/08/2023", "15/08/2023", "Aracaju", 23, "30% OFF"));
+        passagens.add(new Passagem(2412, "16:45", 10, 1566.69, "16/08/2023", "17/08/2023", "Cuiabá", 24, "25% OFF"));
+        passagens.add(new Passagem(2587, "19:30", 2, 1727.69, "18/08/2023", "19/08/2023", "São Luís", 25, "15% OFF"));
+        passagens.add(new Passagem(2666, "09:00", 5, 1989.99, "20/08/2023", "21/08/2023", "Macapá", 26, "30% OFF"));
+        passagens.add(new Passagem(2723, "11:30", 8, 2839.39, "22/08/2023", "23/08/2023", "Palmas", 27, "20% OFF"));
+        passagens.add(new Passagem(2823, "14:15", 3, 1723.99, "24/08/2023", "25/08/2023", "Boa Vista", 28, "10% OFF"));
+        passagens.add(new Passagem(2965, "16:45", 10, 1237.84, "26/08/2023", "27/08/2023", "Maceió", 29, "25% OFF"));
+        passagens.add(new Passagem(3075, "19:30", 2, 1623.99, "28/08/2023", "29/08/2023", "Natal", 30, "15% OFF"));
 
         return passagens;
     }

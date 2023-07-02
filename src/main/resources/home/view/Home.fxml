@@ -292,12 +292,12 @@
                         <TableView fx:id="tbvPassagensHome" layoutX="31.0" layoutY="125.0" prefHeight="406.0" prefWidth="824.0" stylesheets="@../css/fullpackstyling.css">
                            <columns>
                               <TableColumn fx:id="colIdHome" prefWidth="81.0" text="ID" />
-                              <TableColumn fx:id="colDestinoPromo1" prefWidth="120.0" text="DESTINO" />
+                              <TableColumn fx:id="colDestinoHome" prefWidth="120.0" text="DESTINO" />
                               <TableColumn fx:id="colHorarioHome" prefWidth="123.0" text="HORARIO" />
                               <TableColumn fx:id="colVagasHome" prefWidth="124.0" text="VAGAS" />
                               <TableColumn fx:id="colPrecoHome" prefWidth="182.0" text="PREÇO" />
-                              <TableColumn fx:id="colDataIdaPromo1" prefWidth="90.0" text="DATA IDA" />
-                              <TableColumn fx:id="colDataRetornoPromo1" prefWidth="133.0" text="DATA LIMITE" />
+                              <TableColumn fx:id="colDataIdaHome" prefWidth="90.0" text="DATA IDA" />
+                              <TableColumn fx:id="colDataRetornoHome" prefWidth="133.0" text="DATA LIMITE" />
                            </columns>
                         </TableView>
                         <TextField fx:id="txtCidadeOrigemPromo" layoutX="116.0" layoutY="70.0" prefHeight="29.0" prefWidth="139.0" promptText="Origem" />
@@ -316,7 +316,7 @@
                         </Button>
                      </children>
                   </Pane>
-                  <Pane fx:id="pnUsuario" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fffff;">
+                  <Pane fx:id="pnUsuario" opacity="0.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fffff;">
                      <children>
                         <Label layoutX="376.0" layoutY="196.0" prefHeight="25.0" prefWidth="141.0" text="Entrar na PAV">
                            <font>
