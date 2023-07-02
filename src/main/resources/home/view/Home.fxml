@@ -155,34 +155,6 @@
                         </ImageView>
                      </children>
                   </Pane>
-                  <Pane fx:id="pnUsuario" opacity="0.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fff;">
-                     <children>
-                        <Label layoutX="376.0" layoutY="196.0" prefHeight="25.0" prefWidth="141.0" text="Entrar na PAV">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Label>
-                        <TextField fx:id="txtUsuario" layoutX="359.0" layoutY="249.0" prefHeight="26.0" prefWidth="173.0" promptText="Username" stylesheets="@../css/fullpackstyling.css" />
-                        <PasswordField fx:id="txtSenha" layoutX="359.0" layoutY="297.0" prefHeight="26.0" prefWidth="173.0" promptText="Senha" stylesheets="@../css/fullpackstyling.css" />
-                        <Button fx:id="btnLogin" layoutX="387.0" layoutY="348.0" mnemonicParsing="false" onAction="#handleLogin" prefHeight="42.0" prefWidth="114.0" stylesheets="@../css/fullpackstyling.css" text="Login" />
-                        <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="419.0" layoutY="132.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../imgs/LoginIcon.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="325.0" layoutY="251.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../imgs/userLogin.png" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="325.0" layoutY="299.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../imgs/senhaLogin.png" />
-                           </image>
-                        </ImageView>
-                        <Label fx:id="lblUsuarioStatus" layoutX="366.0" layoutY="226.0" prefHeight="22.0" prefWidth="161.0" textFill="#e80e0eab" />
-                     </children>
-                  </Pane>
                   <Pane fx:id="pnMinhasPassagens" layoutX="10.0" layoutY="10.0" opacity="0.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffffff;">
                      <children>
                         <TableView layoutX="20.0" layoutY="70.0" prefHeight="519.0" prefWidth="847.0" stylesheets="@../css/fullpackstyling.css">
@@ -339,6 +311,34 @@
                               <Font name="System Bold" size="28.0" />
                            </font>
                         </Button>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="pnUsuario" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #fffff;">
+                     <children>
+                        <Label layoutX="376.0" layoutY="196.0" prefHeight="25.0" prefWidth="141.0" text="Entrar na PAV">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtUsuario" layoutX="359.0" layoutY="249.0" prefHeight="26.0" prefWidth="173.0" promptText="Username" stylesheets="@../css/fullpackstyling.css" />
+                        <PasswordField fx:id="txtSenha" layoutX="359.0" layoutY="297.0" prefHeight="26.0" prefWidth="173.0" promptText="Senha" stylesheets="@../css/fullpackstyling.css" />
+                        <Button fx:id="btnLogin" layoutX="387.0" layoutY="348.0" mnemonicParsing="false" onAction="#handleLogin" prefHeight="42.0" prefWidth="114.0" stylesheets="@../css/fullpackstyling.css" text="Login" />
+                        <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="419.0" layoutY="132.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../imgs/LoginIcon.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="325.0" layoutY="251.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../imgs/userLogin.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="325.0" layoutY="299.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../imgs/senhaLogin.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="lblUsuarioStatus" layoutX="366.0" layoutY="226.0" prefHeight="22.0" prefWidth="161.0" textFill="#e80e0eab" />
                      </children>
                   </Pane>
                </children>
