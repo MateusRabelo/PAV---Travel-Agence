@@ -17,7 +17,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane cacheShape="false" centerShape="false" prefHeight="618.0" prefWidth="1076.0" scaleShape="false" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.controllers.Controller">
+<AnchorPane cacheShape="false" centerShape="false" prefHeight="618.0" prefWidth="1076.0" scaleShape="false" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.controllers.Controller">
    <children>
       <BorderPane prefHeight="618.0" prefWidth="908.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <left>
@@ -320,9 +320,12 @@
                         <TableView fx:id="tbvPassagensHome" layoutX="31.0" layoutY="125.0" prefHeight="406.0" prefWidth="824.0" stylesheets="@../css/fullpackstyling.css">
                            <columns>
                               <TableColumn fx:id="colIdHome" prefWidth="81.0" text="ID" />
+                              <TableColumn fx:id="colDestinoPromo1" prefWidth="120.0" text="DESTINO" />
                               <TableColumn fx:id="colHorarioHome" prefWidth="123.0" text="HORARIO" />
                               <TableColumn fx:id="colVagasHome" prefWidth="124.0" text="VAGAS" />
                               <TableColumn fx:id="colPrecoHome" prefWidth="182.0" text="PREÇO" />
+                              <TableColumn fx:id="colDataIdaPromo1" prefWidth="90.0" text="DATA IDA" />
+                              <TableColumn fx:id="colDataRetornoPromo1" prefWidth="133.0" text="DATA LIMITE" />
                            </columns>
                         </TableView>
                         <TextField fx:id="txtCidadeOrigemPromo" layoutX="116.0" layoutY="70.0" prefHeight="29.0" prefWidth="139.0" promptText="Origem" />
