@@ -273,15 +273,26 @@ public class Controller implements Initializable {
     @FXML
     private void handlePagamento(ActionEvent event)
     {
-        pnPagamento.toFront();
+        if(tbvPassagensHome.getSelectionModel().isEmpty())
+        {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Aviso!");
+            alert.setHeaderText(null);
+            alert.setContentText("Nenhuma passagem selecionada");
+            alert.showAndWait();
+        }
+        else
+        {
+            pnPagamento.toFront();
 
-        pnPagamento.setOpacity(1);
-        pnUsuario.setOpacity(0);
-        pnPromocionais.setOpacity(0);
-        pnMinhasPassagens.setOpacity(0);
-        pnLogado.setOpacity(0);
-        pnSobre.setOpacity(0);
-        pnHome.setOpacity(0);
+            pnPagamento.setOpacity(1);
+            pnUsuario.setOpacity(0);
+            pnPromocionais.setOpacity(0);
+            pnMinhasPassagens.setOpacity(0);
+            pnLogado.setOpacity(0);
+            pnSobre.setOpacity(0);
+            pnHome.setOpacity(0);
+        }
     }
 
     // region of Pane "Logado"
