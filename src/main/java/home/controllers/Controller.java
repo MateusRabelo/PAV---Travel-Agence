@@ -234,6 +234,15 @@ public class Controller implements Initializable {
     private TextField txtCodigoSeguranca;
 
     @FXML
+    private TextField txtNomeCompletoPag;
+
+    @FXML
+    private TextField txtCpfPag;
+
+    @FXML
+    private TextField txtEmailPag;
+
+    @FXML
     private PasswordField txtSenha;
 
     @FXML
@@ -256,10 +265,10 @@ public class Controller implements Initializable {
             dataIdaFormatada = dataIda.format(formatter);
         }
 
-        // Supondo que você tenha uma lista de todas as passagens disponíveis
+        // lista de todas as passagens disponíveis
         ObservableList<Passagem> todasPassagens = Passagem.gerarPassagensFicticias();
 
-        // Crie uma lista para armazenar as passagens encontradas na busca
+        // lista para armazenar as passagens encontradas na busca
         ObservableList<Passagem> passagensEncontradas = FXCollections.observableArrayList();
 
         // Itere sobre todas as passagens e verifique se os critérios de busca são atendidos
@@ -303,11 +312,15 @@ public class Controller implements Initializable {
     }
 
     private void realizarBuscaPromo(String Destino, LocalDate dataIda, LocalDate dataRetorno) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
-        // Supondo que você tenha uma lista de todas as passagens disponíveis
+        String dataRetornoFormatada = null;
+        String dataIdaFormatada = null;
+
+        // lista de todas as passagens disponíveis
         ObservableList<Passagem> todasPassagens = Passagem.gerarPassagensFicticias();
 
-        // Crie uma lista para armazenar as passagens encontradas na busca
+        // lista para armazenar as passagens encontradas na busca
         ObservableList<Passagem> passagensEncontradas = FXCollections.observableArrayList();
 
         // Itere sobre todas as passagens e verifique se os critérios de busca são atendidos
@@ -323,14 +336,14 @@ public class Controller implements Initializable {
 
             // Verifique o critério da data de ida
             if (dataIda != null) {
-                if (!passagem.getDataIda().equals(dataIda)) {
+                if (!passagem.getDataIda().equals(dataIdaFormatada)) {
                     atendeCriterios = false;
                 }
             }
 
             // Verifique o critério da data de retorno
             if (dataRetorno != null) {
-                if (!passagem.getDataRetorno().equals(dataRetorno)) {
+                if (!passagem.getDataRetorno().equals(dataRetornoFormatada)) {
                     atendeCriterios = false;
                 }
             }
@@ -395,33 +408,6 @@ public class Controller implements Initializable {
 
     }
 
-
-    // método para ir para a página de pagamentos após ter selecionado alguma passagem
-    @FXML
-    private void handlePagamento(ActionEvent event)
-    {
-        if(tbvPassagensHome.getSelectionModel().isEmpty())
-        {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Aviso!");
-            alert.setHeaderText(null);
-            alert.setContentText("Nenhuma passagem selecionada");
-            alert.showAndWait();
-        }
-        else
-        {
-            pnPagamento.toFront();
-
-            pnPagamento.setOpacity(1);
-            pnUsuario.setOpacity(0);
-            pnPromocionais.setOpacity(0);
-            pnMinhasPassagens.setOpacity(0);
-            pnLogado.setOpacity(0);
-            pnSobre.setOpacity(0);
-            pnHome.setOpacity(0);
-        }
-    }
-
     // region of Pane "Logado"
 
     // método para verificar as condições de login, e se já está logado no sistema
@@ -467,6 +453,32 @@ public class Controller implements Initializable {
     // region of Pane "Usuario"
 
     // region of Pane "Inicio"
+
+    // método para ir para a página de pagamentos após ter selecionado alguma passagem
+    @FXML
+    private void handlePagamentoHome(ActionEvent event)
+    {
+        if(tbvPassagensHome.getSelectionModel().isEmpty())
+        {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Aviso!");
+            alert.setHeaderText(null);
+            alert.setContentText("Nenhuma passagem selecionada");
+            alert.showAndWait();
+        }
+        else
+        {
+            pnPagamento.toFront();
+
+            pnPagamento.setOpacity(1);
+            pnUsuario.setOpacity(0);
+            pnPromocionais.setOpacity(0);
+            pnMinhasPassagens.setOpacity(0);
+            pnLogado.setOpacity(0);
+            pnSobre.setOpacity(0);
+            pnHome.setOpacity(0);
+        }
+    }
 
     // método responsável por fazer a busca no grid de passagens da home
     @FXML
@@ -520,7 +532,36 @@ public class Controller implements Initializable {
 
 
 
+
     // region of Pane "Promocionais"
+
+
+
+
+    @FXML
+    private void handlePagamentoPromo(ActionEvent event)
+    {
+        if(tbvPassagensPromo.getSelectionModel().isEmpty())
+        {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Aviso!");
+            alert.setHeaderText(null);
+            alert.setContentText("Nenhuma passagem selecionada");
+            alert.showAndWait();
+        }
+        else
+        {
+            pnPagamento.toFront();
+
+            pnPagamento.setOpacity(1);
+            pnUsuario.setOpacity(0);
+            pnPromocionais.setOpacity(0);
+            pnMinhasPassagens.setOpacity(0);
+            pnLogado.setOpacity(0);
+            pnSobre.setOpacity(0);
+            pnHome.setOpacity(0);
+        }
+    }
 
     // método responsável por fazer a busca no grid de passagens da promo
     @FXML
@@ -567,24 +608,31 @@ public class Controller implements Initializable {
     @FXML
     private void handleConfirmarClick(ActionEvent event)
     {
-        if(Pagamento.verificarPagamento(txtNumeroCartao, txtCpf))
+        if(txtNomeCompleto == null || txtCpf == null || txtEmail == null || txtNascimento == null || txtNomeCompletoPag == null || txtCpfPag == null || txtEmailPag == null)
         {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Pagamento Realizado");
             alert.setHeaderText(null);
-            alert.setContentText("O pagamento foi realizado com sucesso!");
+            alert.setContentText("Preencha todas as informações");
 
             alert.showAndWait();
+            if(Pagamento.verificarPagamento(txtNumeroCartao, txtCpf))
+            {
+                Alert alertPag = new Alert(Alert.AlertType.INFORMATION);
+                alertPag.setTitle("Pagamento Realizado");
+                alertPag.setHeaderText(null);
+                alertPag.setContentText("O pagamento foi realizado com sucesso!");
 
-            // acrescentar lógica para if verificarPagammento is true, então adicionar na seção de Minhas passagens
-        }
-        else
-        {
-            lblCpfPagamentoStatus.setText("Cpf inválido!");
-            lblNumeroCartaoStatus.setText("Numero do cartão inválido!");
+                alertPag.showAndWait();
+            }
+            else
+            {
+                lblCpfPagamentoStatus.setText("Cpf inválido!");
+                lblNumeroCartaoStatus.setText("Numero do cartão inválido!");
 
+            }
         }
-    }
+        }
 
     // método para a opção de pagamento via pix
     @FXML

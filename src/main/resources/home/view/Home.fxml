@@ -225,7 +225,7 @@
                               <Font name="DejaVu Sans Bold" size="28.0" />
                            </font>
                         </Label>
-                        <Button fx:id="btnComprarPassagemHome" layoutX="282.0" layoutY="544.0" mnemonicParsing="false" onAction="#handlePagamento" prefHeight="51.0" prefWidth="323.0" stylesheets="@../css/fullpackstyling.css" text="Fazer Reserva">
+                        <Button fx:id="btnComprarPassagemHome" layoutX="282.0" layoutY="544.0" mnemonicParsing="false" onAction="#handlePagamentoHome" prefHeight="51.0" prefWidth="323.0" stylesheets="@../css/fullpackstyling.css" text="Fazer Reserva">
                            <font>
                               <Font name="System Bold" size="28.0" />
                            </font>
@@ -260,7 +260,42 @@
                         <Label fx:id="lblUsuarioStatus" layoutX="366.0" layoutY="226.0" prefHeight="22.0" prefWidth="161.0" textFill="#e80e0eab" />
                      </children>
                   </Pane>
-                  <Pane fx:id="pnPagamento" opacity="0.0" prefHeight="200.0" prefWidth="200.0">
+                  <Pane fx:id="pnPromocionais" opacity="0.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffffff;">
+                     <children>
+                        <TextField fx:id="txtCidadeOrigemPromo" disable="true" layoutX="119.0" layoutY="73.0" opacity="0.29" prefHeight="29.0" prefWidth="139.0" promptText="In manutence" />
+                        <TextField fx:id="txtCidadeDestinoPromo" layoutX="266.0" layoutY="73.0" prefHeight="29.0" prefWidth="139.0" promptText="Destino" />
+                        <DatePicker fx:id="txtDiaIdaPromo" layoutX="412.0" layoutY="73.0" prefHeight="29.0" prefWidth="139.0" promptText="Ida" />
+                        <DatePicker fx:id="txtDiaRetornoPromo" layoutX="557.0" layoutY="73.0" prefHeight="29.0" prefWidth="139.0" promptText="Retorno" />
+                        <Button fx:id="btnBuscarPromo" layoutX="710.0" layoutY="73.0" mnemonicParsing="false" onAction="#handleBuscarPromo" prefHeight="29.0" stylesheets="@../css/fullpackstyling.css" text="Buscar" />
+                        <TableView fx:id="tbvPassagensPromo" layoutX="31.0" layoutY="125.0" prefHeight="407.0" prefWidth="828.0" stylesheets="@../css/fullpackstyling.css">
+                           <columns>
+                              <TableColumn fx:id="colIdPromo" prefWidth="81.0" text="ID" />
+                              <TableColumn fx:id="colDestinoPromo" prefWidth="120.0" text="DESTINO" />
+                              <TableColumn fx:id="colHorarioPromo" prefWidth="101.0" text="HORARIO" />
+                              <TableColumn fx:id="colVagasPromo" prefWidth="96.0" text="VAGAS" />
+                              <TableColumn fx:id="colOfertaPromo" prefWidth="90.0" text="OFERTA" />
+                              <TableColumn fx:id="colDataIdaPromo" prefWidth="90.0" text="DATA IDA" />
+                              <TableColumn fx:id="colDataRetornoPromo" prefWidth="133.0" text="DATA LIMITE" />
+                           </columns>
+                        </TableView>
+                        <Label layoutX="245.0" layoutY="18.0" text="Passagens com Desconto">
+                           <font>
+                              <Font name="DejaVu Sans Bold" size="28.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="46.0" fitWidth="54.0" layoutX="189.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../imgs/IconPromo.png" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="btnComprarPassagemPromo" layoutX="283.0" layoutY="544.0" mnemonicParsing="false" onAction="#handlePagamentoPromo" prefHeight="51.0" prefWidth="323.0" stylesheets="@../css/fullpackstyling.css" text="Fazer Reserva">
+                           <font>
+                              <Font name="System Bold" size="28.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="pnPagamento" prefHeight="200.0" prefWidth="200.0">
                      <children>
                         <Label layoutX="49.0" layoutY="13.0" text="Dados para pagamento">
                            <font>
@@ -344,11 +379,11 @@
                               <Font name="System Bold" size="14.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="txtNomeCompleto2" layoutX="49.0" layoutY="362.0" prefHeight="31.0" prefWidth="203.0" promptText="Nome completo" />
+                        <TextField fx:id="txtNomeCompletoPag" layoutX="49.0" layoutY="362.0" prefHeight="31.0" prefWidth="203.0" promptText="Nome completo" />
                         <Label layoutX="49.0" layoutY="345.0" text="Nome Completo" />
-                        <TextField fx:id="txtCpf2" layoutX="49.0" layoutY="417.0" prefHeight="31.0" prefWidth="203.0" promptText="xxx.xxx.xxx-xx" />
+                        <TextField fx:id="txtCpfPag" layoutX="49.0" layoutY="417.0" prefHeight="31.0" prefWidth="203.0" promptText="xxx.xxx.xxx-xx" />
                         <Label layoutX="50.0" layoutY="401.0" text="CPF / CNPJ" />
-                        <TextField fx:id="txtEmail2" layoutX="49.0" layoutY="488.0" prefHeight="31.0" prefWidth="203.0" promptText="example@example.com" />
+                        <TextField fx:id="txtEmailPag" layoutX="49.0" layoutY="488.0" prefHeight="31.0" prefWidth="203.0" promptText="example@example.com" />
                         <Label layoutX="50.0" layoutY="472.0" text="E-mail" />
                         <Separator layoutX="462.0" layoutY="12.0" orientation="VERTICAL" prefHeight="591.0" prefWidth="5.0" />
                         <RadioButton layoutX="266.0" layoutY="107.0" mnemonicParsing="false" text="Sim">
@@ -357,41 +392,6 @@
                            </toggleGroup>
                         </RadioButton>
                         <RadioButton layoutX="329.0" layoutY="107.0" mnemonicParsing="false" text="Não" toggleGroup="$Maioridade" />
-                     </children>
-                  </Pane>
-                  <Pane fx:id="pnPromocionais" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffffff;">
-                     <children>
-                        <TextField fx:id="txtCidadeOrigemPromo" disable="true" layoutX="119.0" layoutY="73.0" opacity="0.29" prefHeight="29.0" prefWidth="139.0" promptText="In manutence" />
-                        <TextField fx:id="txtCidadeDestinoPromo" layoutX="266.0" layoutY="73.0" prefHeight="29.0" prefWidth="139.0" promptText="Destino" />
-                        <DatePicker fx:id="txtDiaIdaPromo" layoutX="412.0" layoutY="73.0" prefHeight="29.0" prefWidth="139.0" promptText="Ida" />
-                        <DatePicker fx:id="txtDiaRetornoPromo" layoutX="557.0" layoutY="73.0" prefHeight="29.0" prefWidth="139.0" promptText="Retorno" />
-                        <Button fx:id="btnBuscarPromo" layoutX="710.0" layoutY="73.0" mnemonicParsing="false" onAction="#handleBuscarPromo" prefHeight="29.0" stylesheets="@../css/fullpackstyling.css" text="Buscar" />
-                        <TableView fx:id="tbvPassagensPromo" layoutX="31.0" layoutY="125.0" prefHeight="407.0" prefWidth="828.0" stylesheets="@../css/fullpackstyling.css">
-                           <columns>
-                              <TableColumn fx:id="colIdPromo" prefWidth="81.0" text="ID" />
-                              <TableColumn fx:id="colDestinoPromo" prefWidth="120.0" text="DESTINO" />
-                              <TableColumn fx:id="colHorarioPromo" prefWidth="101.0" text="HORARIO" />
-                              <TableColumn fx:id="colVagasPromo" prefWidth="96.0" text="VAGAS" />
-                              <TableColumn fx:id="colOfertaPromo" prefWidth="90.0" text="OFERTA" />
-                              <TableColumn fx:id="colDataIdaPromo" prefWidth="90.0" text="DATA IDA" />
-                              <TableColumn fx:id="colDataRetornoPromo" prefWidth="133.0" text="DATA LIMITE" />
-                           </columns>
-                        </TableView>
-                        <Label layoutX="245.0" layoutY="18.0" text="Passagens com Desconto">
-                           <font>
-                              <Font name="DejaVu Sans Bold" size="28.0" />
-                           </font>
-                        </Label>
-                        <ImageView fitHeight="46.0" fitWidth="54.0" layoutX="189.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../imgs/IconPromo.png" />
-                           </image>
-                        </ImageView>
-                        <Button fx:id="btnComprarPassagemPromo" layoutX="283.0" layoutY="544.0" mnemonicParsing="false" onAction="#handlePagamento" prefHeight="51.0" prefWidth="323.0" stylesheets="@../css/fullpackstyling.css" text="Fazer Reserva">
-                           <font>
-                              <Font name="System Bold" size="28.0" />
-                           </font>
-                        </Button>
                      </children>
                   </Pane>
                </children>
