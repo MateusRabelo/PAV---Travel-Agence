@@ -336,6 +336,7 @@ public class Controller implements Initializable {
 
     // method to non-specified action click
 
+    // método para troca de telas no geral
     @FXML
     private void handleClicks(ActionEvent event)
     {
@@ -377,6 +378,7 @@ public class Controller implements Initializable {
 
     }
 
+    // método para ir para a página de pagamentos após ter selecionado alguma passagem
     @FXML
     private void handlePagamento(ActionEvent event)
     {
@@ -404,6 +406,7 @@ public class Controller implements Initializable {
 
     // region of Pane "Logado"
 
+    // método para verificar as condições de login, e se já está logado no sistema
     @FXML
     public void handleLogin(ActionEvent event)
     {
@@ -447,6 +450,7 @@ public class Controller implements Initializable {
 
     // region of Pane "Inicio"
 
+    // método responsável por fazer a busca no grid de passagens da home
     @FXML
     public void handleBuscarHome()
     {
@@ -472,6 +476,7 @@ public class Controller implements Initializable {
 //            }
 //        });
 
+        // lambda que permite múltiplas seleções no grid da tableView (caso queira comprar mais de uma passagem)
         tbvPassagensHome.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         tbvPassagensHome.setOnMouseClicked(event -> {
             ObservableList<Passagem> passagensSelecionadas = tbvPassagensHome.getSelectionModel().getSelectedItems();
@@ -483,10 +488,13 @@ public class Controller implements Initializable {
             }
         });
 
+        // definindo atributos para fazer a busca
+
         String cidadeDestino = txtCidadeDestinoHome.getText();
         LocalDate dataIda = txtDiaIdaHome.getValue();
         LocalDate dataRetorno = txtDiaRetornoHome.getValue();
 
+        // lógica de busca (home)
         realizarBuscaHome(cidadeDestino, dataIda, dataRetorno);
 
 
@@ -496,6 +504,7 @@ public class Controller implements Initializable {
 
     // region of Pane "Promocionais"
 
+    // método responsável por fazer a busca no grid de passagens da promo
     @FXML
     public void handleBuscarPromo()
     {
@@ -510,6 +519,7 @@ public class Controller implements Initializable {
         ObservableList<Passagem> passagens = Passagem.gerarPassagensFicticias();
 
         tbvPassagensPromo.setItems(passagens);
+
 
         tbvPassagensPromo.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         tbvPassagensPromo.setOnMouseClicked(event -> {
@@ -534,6 +544,8 @@ public class Controller implements Initializable {
     // region of Pane "Sobre"
 
     // region of Pane "Pagamento"
+
+    // método para confirmar o pagamento
     @FXML
     private void handleConfirmarClick(ActionEvent event)
     {
@@ -556,6 +568,7 @@ public class Controller implements Initializable {
         }
     }
 
+    // método para a opção de pagamento via pix
     @FXML
     public void handlePixClick(ActionEvent event)
     {
@@ -580,6 +593,7 @@ public class Controller implements Initializable {
         txtCodigoSeguranca.setOpacity(0);
     }
 
+    // método para a opção de pagamento via cartão
     @FXML
     public void handleCartaoClick(ActionEvent event)
     {

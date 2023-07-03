@@ -21,6 +21,7 @@ public class Pagamento {
     private String metodoPagamento;
     private Usuario pagador;
 
+    // verifica se o cpf é válido
     public static boolean validarCPF(String cpf) {
         // Remova caracteres não numéricos do CPF
         cpf = cpf.replaceAll("[^0-9]", "");
@@ -68,7 +69,7 @@ public class Pagamento {
         return true;
     }
 
-
+    // confirma se o cpf e se o cartão estão válidos
     public static boolean verificarPagamento(TextField txtNumeroCartao, TextField txtCpf)
     {
         //CHECADORES DE VERDADEIRO OU FALSO

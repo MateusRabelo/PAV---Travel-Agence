@@ -108,6 +108,7 @@ public class Passagem {
     }
 
 
+    // construtor para a criação da ObservableList na captura de informações
     String[] cidades = {"Acre", "Alagoas", "Amapá", "Amazonas", "Bahia", "Ceará", "Distrito Federal", "Espírito Santo", "Goiás", "Maranhão", "Mato Grosso", "Mato Grosso do Sul", "Minas Gerais", "Pará", "Paraíba", "Paraná", "Pernambuco", "Piauí", "Rio de Janeiro", "Rio Grande do Norte", "Rio Grande do Sul", "Rondônia", "Roraima", "Santa Catarina", "São Paulo", "Sergipe", "Tocantins"};
     public Passagem(int id, String horario, int vagas, double preco, String dataIda, String dataRetorno, String destino, int poltrona, String oferta) {
         this.id = id;
@@ -121,7 +122,7 @@ public class Passagem {
         this.oferta = oferta;
     }
 
-
+        // lista criada para gerar passagens previamente prontas;
         public static ObservableList<Passagem> gerarPassagensFicticias()
     {
         ObservableList<Passagem> passagens = FXCollections.observableArrayList();

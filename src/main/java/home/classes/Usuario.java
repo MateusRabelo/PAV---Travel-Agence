@@ -77,6 +77,7 @@ public class Usuario {
         this.email = email;
     }
 
+    // verifica se está logado
     public static boolean isLogado(TextField txtUsuario, TextField txtSenha)
     {
         if(txtUsuario.getText().equals("admin") && txtSenha.getText().equals("admin"))
