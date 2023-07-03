@@ -2,6 +2,7 @@ package home.controllers;
 
 import home.classes.*;
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -13,6 +14,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
@@ -183,13 +185,13 @@ public class Controller implements Initializable {
     private TableColumn<Passagem, String> colDataRetornoHome;
 
     @FXML
-    private TextField txtCidadeDestino1;
+    private TextField txtCidadeDestinoHome;
 
     @FXML
     private TextField txtCidadeDestinoPromo;
 
     @FXML
-    private TextField txtCidadeOrigem1;
+    private TextField txtCidadeOrigemHome;
 
     @FXML
     private TextField txtCidadeOrigemPromo;
@@ -198,13 +200,13 @@ public class Controller implements Initializable {
     private TextField txtCpf;
 
     @FXML
-    private DatePicker txtDiaIda1;
+    private DatePicker txtDiaIdaHome;
 
     @FXML
     private DatePicker txtDiaIdaPromo;
 
     @FXML
-    private DatePicker txtDiaRetorno1;
+    private DatePicker txtDiaRetornoHome;
 
     @FXML
     private DatePicker txtDiaRetornoPromo;
@@ -233,8 +235,104 @@ public class Controller implements Initializable {
     @FXML
     private TextField txtUsuario;
 
+    // auxiliars methods
+
+    private void realizarBuscaHome(String Destino, LocalDate dataIda, LocalDate dataRetorno) {
+
+        // Supondo que você tenha uma lista de todas as passagens disponíveis
+        ObservableList<Passagem> todasPassagens = Passagem.gerarPassagensFicticias();
+
+        // Crie uma lista para armazenar as passagens encontradas na busca
+        ObservableList<Passagem> passagensEncontradas = FXCollections.observableArrayList();
+
+        // Itere sobre todas as passagens e verifique se os critérios de busca são atendidos
+        for (Passagem passagem : todasPassagens) {
+            boolean atendeCriterios = true;
+
+            // Verifique o critério do destino
+            if (Destino != null && !Destino.isEmpty()) {
+                if (!passagem.getDestino().equalsIgnoreCase(Destino)) {
+                    atendeCriterios = false;
+                }
+            }
+
+            // Verifique o critério da data de ida
+            if (dataIda != null) {
+                if (!passagem.getDataIda().equals(dataIda)) {
+                    atendeCriterios = false;
+                }
+            }
+
+            // Verifique o critério da data de retorno
+            if (dataRetorno != null) {
+                if (!passagem.getDataRetorno().equals(dataRetorno)) {
+                    atendeCriterios = false;
+                }
+            }
+
+            if (atendeCriterios) {
+                passagensEncontradas.add(passagem);
+            }
+        }
+
+        // Atualize a tabela de exibição com as passagens encontradas
+        tbvPassagensHome.setItems(passagensEncontradas);
+
+        // Imprime as informações da passagem no console
+        System.out.println("Destino: " + Destino);
+        System.out.println("Data de Ida: " + dataIda);
+        System.out.println("Data de Retorno: " + dataRetorno);
+        System.out.println("----------------------------------");
+    }
+
+    private void realizarBuscaPromo(String Destino, LocalDate dataIda, LocalDate dataRetorno) {
+
+        // Supondo que você tenha uma lista de todas as passagens disponíveis
+        ObservableList<Passagem> todasPassagens = Passagem.gerarPassagensFicticias();
+
+        // Crie uma lista para armazenar as passagens encontradas na busca
+        ObservableList<Passagem> passagensEncontradas = FXCollections.observableArrayList();
+
+        // Itere sobre todas as passagens e verifique se os critérios de busca são atendidos
+        for (Passagem passagem : todasPassagens) {
+            boolean atendeCriterios = true;
+
+            // Verifique o critério do destino
+            if (Destino != null && !Destino.isEmpty()) {
+                if (!passagem.getDestino().equalsIgnoreCase(Destino)) {
+                    atendeCriterios = false;
+                }
+            }
+
+            // Verifique o critério da data de ida
+            if (dataIda != null) {
+                if (!passagem.getDataIda().equals(dataIda)) {
+                    atendeCriterios = false;
+                }
+            }
+
+            // Verifique o critério da data de retorno
+            if (dataRetorno != null) {
+                if (!passagem.getDataRetorno().equals(dataRetorno)) {
+                    atendeCriterios = false;
+                }
+            }
+
+            if (atendeCriterios) {
+                passagensEncontradas.add(passagem);
+            }
+        }
+
+        // Atualize a tabela de exibição com as passagens encontradas
+        tbvPassagensPromo.setItems(passagensEncontradas);
 
 
+        // Imprime as informações da passagem no console
+        System.out.println("Destino: " + Destino);
+        System.out.println("Data de Ida: " + dataIda);
+        System.out.println("Data de Retorno: " + dataRetorno);
+        System.out.println("----------------------------------");
+    }
 
     // method to non-specified action click
 
@@ -350,7 +448,7 @@ public class Controller implements Initializable {
     // region of Pane "Inicio"
 
     @FXML
-    public void handleGerarPassagensHome()
+    public void handleBuscarHome()
     {
         colIdHome.setCellValueFactory(new PropertyValueFactory<>("id"));
         colDestinoHome.setCellValueFactory(new PropertyValueFactory<>("destino"));
@@ -385,6 +483,12 @@ public class Controller implements Initializable {
             }
         });
 
+        String cidadeDestino = txtCidadeDestinoHome.getText();
+        LocalDate dataIda = txtDiaIdaHome.getValue();
+        LocalDate dataRetorno = txtDiaRetornoHome.getValue();
+
+        realizarBuscaHome(cidadeDestino, dataIda, dataRetorno);
+
 
     }
 
@@ -392,7 +496,8 @@ public class Controller implements Initializable {
 
     // region of Pane "Promocionais"
 
-    public void handleGerarPassagensPromo()
+    @FXML
+    public void handleBuscarPromo()
     {
         colIdPromo.setCellValueFactory(new PropertyValueFactory<>("id"));
         colDestinoPromo.setCellValueFactory(new PropertyValueFactory<>("destino"));
@@ -406,9 +511,9 @@ public class Controller implements Initializable {
 
         tbvPassagensPromo.setItems(passagens);
 
-        tbvPassagensHome.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
-        tbvPassagensHome.setOnMouseClicked(event -> {
-            ObservableList<Passagem> passagensSelecionadas = tbvPassagensHome.getSelectionModel().getSelectedItems();
+        tbvPassagensPromo.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+        tbvPassagensPromo.setOnMouseClicked(event -> {
+            ObservableList<Passagem> passagensSelecionadas = tbvPassagensPromo.getSelectionModel().getSelectedItems();
             if (!passagensSelecionadas.isEmpty()) {
                 // Faça algo com as passagens selecionadas
                 for (Passagem passagem : passagensSelecionadas) {
@@ -416,6 +521,12 @@ public class Controller implements Initializable {
                 }
             }
         });
+
+        String cidadeDestino = txtCidadeDestinoPromo.getText();
+        LocalDate dataIda = txtDiaIdaPromo.getValue();
+        LocalDate dataRetorno = txtDiaRetornoPromo.getValue();
+
+        realizarBuscaPromo(cidadeDestino, dataIda, dataRetorno);
     }
 
     // region of Pane "Minhas Passagens"

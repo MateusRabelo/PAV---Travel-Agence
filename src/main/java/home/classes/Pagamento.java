@@ -21,6 +21,54 @@ public class Pagamento {
     private String metodoPagamento;
     private Usuario pagador;
 
+    public static boolean validarCPF(String cpf) {
+        // Remova caracteres não numéricos do CPF
+        cpf = cpf.replaceAll("[^0-9]", "");
+
+        // Verifique se o CPF possui 11 dígitos
+        if (cpf.length() != 11) {
+            return false;
+        }
+
+        // Verifique se todos os dígitos são iguais (CPF inválido)
+        boolean todosDigitosIguais = true;
+        for (int i = 1; i < 11; i++) {
+            if (cpf.charAt(i) != cpf.charAt(0)) {
+                todosDigitosIguais = false;
+                break;
+            }
+        }
+        if (todosDigitosIguais) {
+            return false;
+        }
+
+        // Verifique o primeiro dígito verificador
+        int soma = 0;
+        for (int i = 0; i < 9; i++) {
+            soma += Character.getNumericValue(cpf.charAt(i)) * (10 - i);
+        }
+        int resto = 11 - (soma % 11);
+        int digitoVerificador1 = (resto == 10 || resto == 11) ? 0 : resto;
+        if (digitoVerificador1 != Character.getNumericValue(cpf.charAt(9))) {
+            return false;
+        }
+
+        // Verifique o segundo dígito verificador
+        soma = 0;
+        for (int i = 0; i < 10; i++) {
+            soma += Character.getNumericValue(cpf.charAt(i)) * (11 - i);
+        }
+        resto = 11 - (soma % 11);
+        int digitoVerificador2 = (resto == 10 || resto == 11) ? 0 : resto;
+        if (digitoVerificador2 != Character.getNumericValue(cpf.charAt(10))) {
+            return false;
+        }
+
+        // CPF válido
+        return true;
+    }
+
+
     public static boolean verificarPagamento(TextField txtNumeroCartao, TextField txtCpf)
     {
         //CHECADORES DE VERDADEIRO OU FALSO
@@ -29,34 +77,20 @@ public class Pagamento {
 
         //CHECAGEM CARTAO
         //CASO O CPF SEJA MENOR OU MAIOR QUE 8
-      if(txtNumeroCartao.getText().length() == 8)
-      {
-          check = true;
-      }
+        if(txtNumeroCartao.getText().length() == 8)
+        {
+            check = true;
+        }
 
 
       //CHECAGEM DE CPF
-      if (txtCpf.getText().length() == 11) {
-            int soma1 = 0;
-            int soma2 = 0;
-
-            for (int i = 0; i < 9; i++) {
-                int algarismo = Character.getNumericValue(txtCpf.getText().charAt(i));
-                soma1 += algarismo * (10 - i);
-                soma2 += algarismo * (11 - i);
-            }
-
-            int resto1 = soma1 % 11;
-            int j = (resto1 < 2) ? 0 : (11 - resto1);
-
-            soma2 += j * 2;
-            int resto2 = soma2 % 11;
-            int k = (resto2 < 2) ? 0 : (11 - resto2);
-
-            int penultimoDigito = Character.getNumericValue(txtCpf.getText().charAt(9));
-            int ultimoDigito = Character.getNumericValue(txtCpf.getText().charAt(10));
-
-            check1 = (j == penultimoDigito && k == ultimoDigito);
+        if(validarCPF(txtCpf.getText()))
+        {
+            check1 = true;
+        }
+        else
+        {
+            check1 = false;
         }
 
           if(!check && check1)
