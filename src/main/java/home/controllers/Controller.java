@@ -11,6 +11,7 @@ import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.control.cell.PropertyValueFactory;
+import java.time.format.DateTimeFormatter;
 
 
 import java.net.URL;
@@ -30,6 +31,9 @@ public class Controller implements Initializable {
 
     @FXML
     private Button btnConfirmar;
+
+    @FXML
+    private ImageView btnWelcome;
 
     @FXML
     private ImageView btnImageCartao;
@@ -238,6 +242,19 @@ public class Controller implements Initializable {
     // auxiliars methods
 
     private void realizarBuscaHome(String Destino, LocalDate dataIda, LocalDate dataRetorno) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+        String dataRetornoFormatada = null;
+        String dataIdaFormatada = null;
+
+        if(dataRetorno != null)
+        {
+            dataRetornoFormatada = dataRetorno.format(formatter);
+        }
+        else if(dataIda != null)
+        {
+            dataIdaFormatada = dataIda.format(formatter);
+        }
 
         // Supondo que você tenha uma lista de todas as passagens disponíveis
         ObservableList<Passagem> todasPassagens = Passagem.gerarPassagensFicticias();
@@ -258,14 +275,14 @@ public class Controller implements Initializable {
 
             // Verifique o critério da data de ida
             if (dataIda != null) {
-                if (!passagem.getDataIda().equals(dataIda)) {
+                if (!passagem.getDataIda().equals(dataIdaFormatada)) {
                     atendeCriterios = false;
                 }
             }
 
             // Verifique o critério da data de retorno
             if (dataRetorno != null) {
-                if (!passagem.getDataRetorno().equals(dataRetorno)) {
+                if (!passagem.getDataRetorno().equals(dataRetornoFormatada)) {
                     atendeCriterios = false;
                 }
             }
@@ -377,6 +394,7 @@ public class Controller implements Initializable {
         }
 
     }
+
 
     // método para ir para a página de pagamentos após ter selecionado alguma passagem
     @FXML
@@ -629,5 +647,17 @@ public class Controller implements Initializable {
         pnPromocionais.setOpacity(0);
         pnSobre.setOpacity(0);
         pnHome.setOpacity(0);
+
+        btnWelcome.setOnMouseClicked(event -> {
+            pnWelcome.toFront();
+
+            pnWelcome.setOpacity(1);
+            pnHome.setOpacity(0);
+            pnSobre.setOpacity(0);
+            pnPromocionais.setOpacity(0);
+            pnUsuario.setOpacity(0);
+            pnMinhasPassagens.setOpacity(0);
+            pnLogado.setOpacity(0);
+        });
     }
 }
